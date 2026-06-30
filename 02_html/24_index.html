@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>입력 type</title>
+    </head>
+    <body>
+        <h1>입력(input) 타입들에 대하여</h1>
+        <form action="">
+            <label>이메일 입력 : <input type="email", placeholder="메일"></label>
+            <br>
+            <label>비밀번호 입력 : <input type="password", placeholder="비밀번호"></label>
+            <br>
+            <label>동의 : <input type="checkbox", placeholder="동의확인"></label>
+            <br>
+
+            <!-- radio 타입은 여러 체크사항을 name 속성으로 묶을 수 있다. -->
+             <!-- 아래처럼 동일한 gender라는 name을 주면 두 체크 사항중 하나만 체크 가능 -->
+            <label>성별 : <input type="radio" placeholder="성별확인" name="gender">남 <input type="radio" placeholder="성별확인" name="gender">여</label>
+            <br>
+            <input type="date">
+            <br>
+            <textarea name="" id="" placeholder="아무 값이나 넣어주세요">안녕하세요</textarea>
+            <br>
+            <select name="" id="">
+                <option value="">서울</option>
+                <option value="">경기도</option>
+                <option value="">성남</option>
+            </select>
+        </form>
+    </body>
+</html>
