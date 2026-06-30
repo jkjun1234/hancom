@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>폼,입력 페이지</title>
+    </head>
+    <body>
+        <h1>폼,입력 페이지 실습</h1>
+        <!-- form : 입력 칸들을 담는 묶음 상자 -->
+        <form>
+            <!-- label : 설명 글자 -->
+            <label>
+                이름 : 
+                <!-- 
+                input : 입력될 요소 타입마다 다름 (text : 글자) placeholder : 빈 값일때의 표시될 내용 
+                -->
+                <input type="text" placeholder="이름 입력">
+            </label>
+            <hr>
+            <label>
+                목표 : 
+                <input type="number" placeholder="HTML 능력 목표치 1 ~ 10">
+            </label>
+            <hr>
+            <!-- button 태그로 type을 submit으로 하여 해당 form의 내용을 전송한다 -->
+            <button type="submit">보내기</button>
+        </form>
+    </body>
+</html>
