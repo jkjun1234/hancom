@@ -1,0 +1,11 @@
+
+/* 요소 선택자 */
+body {background-color: blanchedalmond; font-family:fantasy;}
+h1 {color:cornflowerblue;}
+p { color:gray; }
+
+/* 클래스 선택자 */
+.special { color: chocolate;}
+
+/* 자손 선택자 */
+li em {color: purple; font-style: normal;}
