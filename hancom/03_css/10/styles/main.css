@@ -1,0 +1,19 @@
+/* styles/main.css */
+
+@keyframes float {  /* float: 움직임 "대본"(이름)을 미리 정의 */
+
+    /* 시작(0%),끝(100%) : 제자리 */
+    0%, 100% {transform: translateY(0);}    
+    
+    /* 중간(50%): 위로 30px 올라감( translateY 음수 = 위) */
+    50% {transform: translateY(-30px);}     
+}
+
+.ball {
+    width: 80px; height: 80px;
+
+    /* border-radius 50% -> 동그라미 형태로 변형 */
+    border-radius: 50%; background: hotpink;
+    /* float 키 값을 1.5초의 주기로 무한 반복(infinite) */
+    animation: float 1.5s ease-in-out infinite;
+}

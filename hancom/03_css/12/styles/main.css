@@ -1,0 +1,70 @@
+/* styles/main.css */
+/* 페이지를 일부러 길게 만들어 스크롤 생성 => fixed, sticky 동작 확인용 */
+body {
+    min-height: 3000px;
+}
+
+/* 부모 박스 */
+.parent {
+    position: relative; /* 기준이 되는 부모 */
+    border: 2px dashed red;
+    border-radius: 8px;
+    height: 120px;
+    background-color: rgb(248, 241, 231);
+    margin : 10px 0;
+}
+
+
+.ptag {
+    position: absolute;
+    top: 6px;
+    left :10px;
+    color: purple;
+    font-weight: bold;
+}
+
+/* relative : 원래 자리 기준으로 이동 */
+.rel {
+    position: relative;
+    top: 30px;
+    left: 20px;
+    width: 150px;
+    padding: 8px;
+    background: rgb(100, 247, 191);
+    border-radius: 6px;
+    color : rgb(12,92,60);
+}
+
+/* absolute : 가장 가까운 position 조상(.parent) 기준 흐름에서 빠짐 */
+.abs {
+    position: absolute;
+    background: rgb(132,46,59);
+    padding: 10px;   
+    bottom: 50px;    right: 16px;   /* 부모의 오른쪽 위 구석 */
+    z-index: 10;    /* 겹치면 숫자 큰 쪽이 위로 표시 */
+    border-radius: 6px;
+}
+
+/* fixed : 화면(뷰포트) 고정 - 스크롤해도 그 자리 */
+.fixed {
+    position: fixed;
+    background-color: blue;
+    color: aliceblue;
+    font-weight: bold;
+    border-radius: 6px;
+    bottom: 16px;
+    right: 16px;
+    padding: 10px;
+}
+
+/* 스크롤을 내려 해당 태그 값이 내려가지 않도록 상단에 붙는 역할*/
+.sticky {
+    position: sticky;
+
+    /* 화면 맨 위로 고정 */
+    top :0;             
+    margin: 10px 0;
+    padding: 8px 12px;
+    background: rgb(100, 156, 191);
+    border-radius: 6px;
+}

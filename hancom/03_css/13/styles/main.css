@@ -1,0 +1,14 @@
+/* styles/main.css */
+.grid {
+    display: grid;  /* 2차원 격자 켜기 */
+    grid-template-columns: repeat(3, 1fr ); /* 3칸 동일한 너비 (1fr 1fr 1fr) 와 같음 */
+    gap:12px;
+}
+
+.card {
+    background: hotpink;    /* 배경 분홍 */
+    color: white;           /* 글자 흰색 */
+    text-align: center;       /* 가운데 정렬 */
+    padding: 22px 0;          /* 위 아래 안쪽 여백 */
+    border-radius: 8px;        /* 모서리 둥글게 */
+}
