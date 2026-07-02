@@ -1,0 +1,38 @@
+.card {
+    width: 300px;
+    height: 150px;
+    perspective: 1000px; /* 3D 화면 구성  해당 값이 작을 수록 화면과 가깝게 변동한다. */
+}
+
+.inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition : transform 0.6s; /* transform 이 바뀔때 마다 0.6초에 걸쳐 부드럽게 */
+    transform-style: preserve-3d; /* 자식을 3D 공간에 둠 */
+}
+
+.card:hover .inner {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    position: absolute; /* 앞 | 뒷면을 .inner 위에 걸쳐 쌓음 */
+    inset: 0; /* top, right, bottom, left 전부 0 (부모 꽉 채움)*/
+    display: flex; /* flex : 안의 글자를 가운데 두기위해 사용 */
+    align-items: center;    /* 세로 가운데 정렬 */
+    justify-content: center;    /* 가로 가운데 정렬 */
+    border-radius: 12px; color: white; font-size: 20px;
+    backface-visibility: hidden; /* hidden : 뒤로 돌아간 면은 안보이게 */
+}
+
+.front
+{
+    background: hotpink;
+}
+
+.back
+{
+    background: rebeccapurple;
+    transform: rotateY(180deg);
+}

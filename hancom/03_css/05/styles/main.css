@@ -1,0 +1,12 @@
+.menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    
+}
+
+#li1 {
+    margin: 10% ;
+    padding: 10%;
+    background-color: aqua;
+}

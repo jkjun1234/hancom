@@ -1,0 +1,12 @@
+/* 
+    작업 전 node.js 설치 필요 
+    https://nodejs.org/ko
+*/
+/* 속성이 뒤죽박죽 — 아래 순서로 적혀 있음 */
+.box {
+  width: 120px;
+  color: white;
+  background: hotpink;
+  height: 120px;
+  border-radius: 16px;
+}

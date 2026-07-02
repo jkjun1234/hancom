@@ -1,0 +1,23 @@
+ul {
+    background-color: white;
+    padding:100px 200px;   /* 상자 안쪽 여백 - 글자와 테두리 사이 공간*/
+    border: 4px solid navy; /* 테두리 - 두께, 실선, 남색*/
+    margin: 200px; /* 상자 바깥 여백 - 옆 요소와의 거리*/
+}
+
+/*
+/ 값 1개 — 상하좌우 전부 같게 
+margin: 20px;
+
+/ 값 2개 — 상하 / 좌우 
+margin: 10px 30px;        /* 상하 10, 좌우 30 */
+
+/* 값 4개 — 상 → 우 → 하 → 좌 (시계방향) 
+margin: 10px 20px 30px 40px;
+
+/* 한 방향씩 따로 지정 
+margin-top: 10px;
+margin-right: 20px;
+margin-bottom: 30px;
+margin-left: 40px; 
+*/
