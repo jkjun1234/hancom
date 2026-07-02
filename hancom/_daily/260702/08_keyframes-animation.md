@@ -46,9 +46,9 @@
 - **50% { translateY(-30px) }** → 절반 시점에 위로 30px. (`translateY`는 음수가 위쪽)
 - **animation: float 1.5s ease-in-out infinite** → 대본 이름 `float`을, **1.5초** 주기로, `ease-in-out` 속도로, **무한 반복(infinite)**.
 
-[이미지 : 공이 위로 떠오른 순간(50% 지점)]
+애니메이션이 절반(50%) 지점에 이르면 `translateY(-30px)`가 적용되어 공이 위로 30px 떠오른다.
 
-[이미지 : 공이 제자리로 내려온 순간(0%/100% 지점)]
+0%와 100% 지점에서는 `translateY(0)`이 적용되어 공이 다시 제자리로 내려온다.
 
 ## transition과 뭐가 다를까?
 

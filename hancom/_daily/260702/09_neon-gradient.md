@@ -49,7 +49,7 @@
   - `rgba(..., 0.7)` = 색 + **투명도 70%**
 - **flex 가운데정렬 3종 세트** → `display:flex` + `align-items:center`(세로) + `justify-content:center`(가로)로 글자 "NEON"을 정중앙에.
 
-[이미지 : 분홍→보라 그라디언트에 분홍빛이 번지는 네온 박스 결과 화면]
+![분홍→보라 그라디언트에 분홍빛이 번지는 네온 박스 결과 화면](C:/Users/jun/Desktop/블로그 업로드용 이미지/09_neon-gradient-01.png)
 
 ## 값만 바꿔서 응용하기
 

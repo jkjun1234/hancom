@@ -56,7 +56,7 @@ span {
 | 두 번째 `<p>` | 인라인 `style="color:red"` | 빨강 |
 | `<span>` | 외부 `blueviolet` vs 내부 `brown` 충돌 | **갈색(brown)** |
 
-[이미지 : 세 방식이 섞여 h1은 노랑·p는 초록/빨강·span은 갈색으로 나온 결과 화면]
+![세 방식이 섞여 h1은 노랑·p는 초록/빨강·span은 갈색으로 나온 결과 화면](C:/Users/jun/Desktop/블로그 업로드용 이미지/04_css-3ways-01.png)
 
 ### 핵심 우선순위
 

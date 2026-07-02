@@ -4,7 +4,7 @@
 
 CSS로 간격을 조절할 때 가장 먼저 헷갈리는 게 "여백을 padding으로 줘야 하나, margin으로 줘야 하나?"이다. 이 셋의 역할을 구분하면 레이아웃이 훨씬 쉬워진다.
 
-[이미지 : padding·border·margin이 적용된 목록 상자 결과 화면]
+![padding·border·margin이 적용된 목록 상자 결과 화면](C:/Users/jun/Desktop/블로그 업로드용 이미지/02_box-model-01.png)
 
 ## HTML
 

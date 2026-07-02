@@ -77,9 +77,9 @@ body {
 - **fixed** → **화면(뷰포트)** 기준. 스크롤을 내려도 항상 같은 자리에 붙어 있다. (예: 우측 하단 버튼)
 - **sticky** → 평소엔 일반 흐름대로 있다가, 스크롤이 지정 위치(`top:0`)에 닿으면 **그때부터 고정**된다. (예: 상단에 붙는 헤더)
 
-[이미지 : relative가 살짝 이동하고 absolute가 부모 오른쪽 아래 구석에 붙은 결과]
+![relative가 살짝 이동하고 absolute가 부모 오른쪽 아래 구석에 붙은 결과](C:/Users/jun/Desktop/블로그 업로드용 이미지/10_position-01-top.png)
 
-[이미지 : 스크롤을 내려도 화면에 계속 붙어 있는 fixed·sticky]
+![스크롤을 내려도 화면에 계속 붙어 있는 fixed·sticky](C:/Users/jun/Desktop/블로그 업로드용 이미지/10_position-02-scroll.png)
 
 ## 짚고 넘어갈 점
 
