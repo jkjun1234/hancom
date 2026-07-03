@@ -1,0 +1,47 @@
+/* styles/main.css */
+
+.start-title {
+    color:navy;
+    font-size: 50px;
+}
+
+/* 해당 태그 앞에 content를 적용 */
+.start-title::before {
+    content: "⭐";
+}
+
+.quote {
+    color: gray;
+    font-style: italic;
+}
+
+.quote::before {
+    content: " ' ";
+    color: tomato;
+    font-weight: 700;
+}
+
+/* 해당 태그 뒤에 content를 붙임 */
+.quote::after {
+    content: " ' ";
+    color: tomato;
+    font-weight: 700;
+}
+
+/* display : inline-block */
+.underline-deco {
+    position: relative;
+    color: green;
+    display: inline-block;
+}
+
+/* 밑줄 표시는 박스를 그려서 밑줄처럼 보이게 표시한다. */
+.underline-deco::after {
+    content: "";
+    background: royalblue;
+    width: 100%;
+    height: 2px;
+    display: block;
+    border-radius: 2px;
+    margin-top: 3px;
+}

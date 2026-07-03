@@ -1,0 +1,28 @@
+/* styles/main.css */
+.card {
+    width: 150px; height: 100px;
+    display:flex; 
+    align-items: center; justify-content: center;
+    background: hotpink; 
+    color: white;
+    font-weight: 700;
+
+    border-radius: 16px;
+    opacity: 0.85;  /* 투명도 85% */
+    /* 그림자 -> 0:좌우 6px:위아래 18px:번짐 rgba:색+투명도 */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    /* 0.3초 동안 바뀜 */
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    /* 뚜렷하게 */
+    opacity: 1;
+
+    /* 위로 8px 올리기 */
+    transform: translateY(-8px);
+
+    /* 그림자 진하게 */
+    box-shadow: 0 16px 32px rgba(255,105,180,0.5);
+}
+

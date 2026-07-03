@@ -1,0 +1,22 @@
+/* styles/main.css */
+
+/* 
+    여백 및 크기 초기화 
+    해당 방식으로 CSS를 초기화 하여야 작업시 CSS 제어를 편라하게 관리할 수 있다.
+*/
+* {
+    /* 기본 바깥/안쪽 여백 제거 */
+    margin: 0;
+    padding: 0;
+
+    /* 크기 계산 방식 변경 */
+    box-sizing: border-box;
+}
+
+h1 {
+    color: green;
+}
+
+p {
+    color: peru;
+}

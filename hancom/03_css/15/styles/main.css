@@ -1,0 +1,26 @@
+/* styles/main.css */
+
+/* 1) 값에 이름표 붙이기 - :root 안에 변수 정의 */
+/* :root = 문서 전체의 뿌리 -> 어디서든 꺼내 쓸 수 있음 */
+:root {
+    /* 메인 색으로 한 줄만 고치면 해당 변수 사용되는 곳 색상 전체 반영 */
+    --main-color: #ec4899;
+    /* 버튼 사이 간격을 줄 값 변수명은 gap */
+    --gap:12px;
+}
+
+/* 2) 변수 꺼내 쓰기 - var(--이름) */
+.row {
+    display:flex;   /* 블럭형 태그들 가로로 붙여서 사용 */
+    gap: var(--gap) /* 간격도 변수로 사용가능 */
+}
+
+.btn {
+    padding: 8px 10px;
+    border:none;
+    border-radius: 8px;
+    background: var(--main-color);  /* 버튼 1,2 같은 색 */
+    color: #fff;
+    font-weight: 1000;  /* 폰트의 굵기 클수록 글자가 진해짐 */
+    cursor: pointer;    /* 마우스 커서 호버시 가리키는 손모양으로 변함 */
+}
