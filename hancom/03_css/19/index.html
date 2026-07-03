@@ -7,44 +7,446 @@
     <title>css 19 - 미니프로젝트_정기준</title>
 </head>
 <body>
-    <h1>즐겁게 알아보아요 웹~!</h1>
 
-    <!-- 10가지 이상 리스트가 필요한 경우 알아서 추가 할 것 -->
-    <div>이곳은 html, css 학습 메뉴가 들어가는 곳 숨김태그로 각 태그별 개념이 숨어있으면 좋을거 같음
-        <div>html
-            <ul>
-                <li>이곳엔 지금까지 배운 실습 코드중 중요도가 높은 태그 총 10가지의 리스트가 필요함</li>
-            </ul>
+    <!-- ===== 상단 헤더 + 고정 네비 (폴더05 플렉스 메뉴 + 폴더12 sticky) ===== -->
+    <header>
+        <h1>즐겁게 알아보아요 웹~! 🎮</h1>
+        <p class="tagline">게임처럼 즐기는 HTML · CSS — 분석 · 정리 · 퀴즈</p>
+    </header>
+
+    <!-- 스크롤 내내 상단에 고정되는 메뉴 (폴더12 sticky) -->
+    <nav>
+        <ul class="menu">
+            <li><a href="#analysis">🔎 분석</a></li>
+            <li><a href="#notes">📚 정리</a></li>
+            <li><a href="#quiz">🕹️ 퀴즈</a></li>
+        </ul>
+    </nav>
+
+    <!-- ===== 메인 캐러셀 : 퀴즈 게임 카드가 가로로 자동 흐름 ===== -->
+    <section id="carousel">
+        <h2>🎠 퀴즈 게임 존</h2>
+        <p class="section-sub">카드에 마우스를 올리면 멈추고 커져요. 클릭하면 해당 퀴즈로 이동합니다.</p>
+
+        <div class="carousel-viewport">
+            <div class="track">
+                <!-- 원본 세트 -->
+                <a class="game-card" href="#q1"><span class="num">Q1</span>flex 가로 정렬</a>
+                <a class="game-card" href="#q2"><span class="num">Q2</span>flex 세로 정렬</a>
+                <a class="game-card" href="#q3"><span class="num">Q3</span>grid 3열</a>
+                <a class="game-card" href="#q4"><span class="num">Q4</span>transform 회전</a>
+                <a class="game-card" href="#q5"><span class="num">Q5</span>원 만들기</a>
+                <a class="game-card" href="#q6"><span class="num">Q6</span>카드 뒤집기</a>
+                <!-- 복제 세트 (끊김 없는 무한 스크롤용) -->
+                <a class="game-card" href="#q1" aria-hidden="true"><span class="num">Q1</span>flex 가로 정렬</a>
+                <a class="game-card" href="#q2" aria-hidden="true"><span class="num">Q2</span>flex 세로 정렬</a>
+                <a class="game-card" href="#q3" aria-hidden="true"><span class="num">Q3</span>grid 3열</a>
+                <a class="game-card" href="#q4" aria-hidden="true"><span class="num">Q4</span>transform 회전</a>
+                <a class="game-card" href="#q5" aria-hidden="true"><span class="num">Q5</span>원 만들기</a>
+                <a class="game-card" href="#q6" aria-hidden="true"><span class="num">Q6</span>카드 뒤집기</a>
+            </div>
         </div>
-        <div>css
-            <ul><li>이곳에도 지금까지 배운 CSS 실습 코드중 중요도가 높은 제목들을 기준으로 10가지의 리스트가 있으면 좋겠음</li></ul>
+    </section>
+
+    <!-- ===== 섹션① 마음에 드는 사이트 분석 ===== -->
+    <section id="analysis">
+        <h2>① 마음에 드는 사이트 분석</h2>
+        <p class="section-sub">이 프로젝트가 참고한 세 사이트를 "무엇을 · 좋은 점 · 우리 프로젝트에 반영" 으로 분석했어요.</p>
+
+        <div class="analysis-grid">
+            <article class="a-card">
+                <h3>CodePen — 3D 카드 캐러셀</h3>
+                <p class="a-link">codepen.io/thebabydino/pen/dPXVyqN</p>
+                <p class="a-shot">[이미지 : 가로로 흐르는 3D 캐러셀 화면]</p>
+                <dl>
+                    <dt>무엇을</dt><dd>카드들이 가로로 줄지어 흐르는 캐러셀 레이아웃</dd>
+                    <dt>좋은 점</dt><dd>움직임만으로 시선을 끌고, 여러 항목을 좁은 공간에 담음</dd>
+                    <dt>우리에 반영</dt><dd>메인 "퀴즈 게임 존"의 자동 흐름 캐러셀로 차용</dd>
+                </dl>
+            </article>
+
+            <article class="a-card">
+                <h3>Flexbox Froggy</h3>
+                <p class="a-link">flexboxfroggy.com</p>
+                <p class="a-shot">[이미지 : 개구리를 연잎에 올리는 flex 게임 화면]</p>
+                <dl>
+                    <dt>무엇을</dt><dd>코드를 입력하면 결과가 즉시 화면에 반영되는 flex 학습 게임</dd>
+                    <dt>좋은 점</dt><dd>"코드 → 결과"를 눈으로 바로 확인하며 배움</dd>
+                    <dt>우리에 반영</dt><dd>퀴즈를 "보기 선택 → 라이브 프리뷰 → 정답" 방식으로 설계</dd>
+                </dl>
+            </article>
+
+            <article class="a-card">
+                <h3>Grid Garden</h3>
+                <p class="a-link">cssgridgarden.com</p>
+                <p class="a-shot">[이미지 : 당근밭에 물을 주는 grid 게임 화면]</p>
+                <dl>
+                    <dt>무엇을</dt><dd>grid 속성으로 물을 주며 배우는 게임</dd>
+                    <dt>좋은 점</dt><dd>격자 개념을 놀이처럼 반복 학습</dd>
+                    <dt>우리에 반영</dt><dd>정리 섹션의 grid 예시·퀴즈 3열 문제에 반영</dd>
+                </dl>
+            </article>
         </div>
-    </div>
-    <div>여기 아래 부분은 코드 펜 처럼 게임들이 수평으로 지나 가면서 마우스 호버시 해당 게임쪽으로 가운데로 포커싱되고 클릭 시 해당 게임이 확대되며 퀴즈를 풀어내며 게임을 진행함 각 퀴즈별로 게임의 종류가  Flexbox Froggy & Grid Garden (flexboxfroggy.com / cssgridgarden.com) 처럼 다양하면 좋겠음</div>
+    </section>
+
+    <!-- ===== 섹션② HTML / CSS 정리 (details 접기 + 미니 박스 데모) ===== -->
+    <section id="notes">
+        <h2>② HTML / CSS 정리</h2>
+        <p class="section-sub">각 항목을 열면 <b>예시코드 · 설명 · 💡응용 · 🖼미니 예시</b>가 나와요.</p>
+
+        <div class="notes-grid">
+
+            <!-- ---- HTML 태그 11개 ---- -->
+            <div class="notes-col">
+                <h3>HTML 태그 (11)</h3>
+
+                <details>
+                    <summary>&lt;h1&gt; 제목</summary>
+                    <code>&lt;h1&gt;큰 제목&lt;/h1&gt;</code>
+                    <p>페이지에서 가장 중요한 제목. 문서당 보통 1개.</p>
+                    <p class="use">💡 페이지·섹션 대표 제목</p>
+                    <div class="demo-note"><h1 class="mini-h1">큰 제목</h1></div>
+                </details>
+
+                <details>
+                    <summary>&lt;p&gt; 문단</summary>
+                    <code>&lt;p&gt;문단 내용&lt;/p&gt;</code>
+                    <p>한 덩어리의 글(문단)을 감싸는 태그.</p>
+                    <p class="use">💡 설명 문장, 본문</p>
+                    <div class="demo-note"><p>이것은 한 문단이에요.</p></div>
+                </details>
+
+                <details>
+                    <summary>&lt;ul&gt; / &lt;li&gt; 목록</summary>
+                    <code>&lt;ul&gt;&lt;li&gt;항목&lt;/li&gt;&lt;/ul&gt;</code>
+                    <p>순서 없는 목록(ul)과 그 안의 각 항목(li).</p>
+                    <p class="use">💡 메뉴, 리스트</p>
+                    <div class="demo-note"><ul class="mini-ul"><li>사과</li><li>바나나</li></ul></div>
+                </details>
+
+                <details>
+                    <summary>&lt;a&gt; 링크</summary>
+                    <code>&lt;a href="#quiz"&gt;이동&lt;/a&gt;</code>
+                    <p>다른 페이지·위치로 이동하는 하이퍼링크.</p>
+                    <p class="use">💡 네비, 앵커 이동</p>
+                    <div class="demo-note"><a href="#quiz">퀴즈로 이동 →</a></div>
+                </details>
+
+                <details>
+                    <summary>&lt;div&gt; 상자</summary>
+                    <code>&lt;div class="box"&gt;…&lt;/div&gt;</code>
+                    <p>의미 없는 범용 블록 상자. 묶고 배치할 때 사용.</p>
+                    <p class="use">💡 레이아웃 컨테이너</p>
+                    <div class="demo-note"><div class="mini-box">div 상자</div></div>
+                </details>
+
+                <details>
+                    <summary>&lt;span&gt; 인라인</summary>
+                    <code>글자 &lt;span&gt;일부&lt;/span&gt; 강조</code>
+                    <p>줄 안에서 글자 일부만 감싸는 인라인 상자.</p>
+                    <p class="use">💡 글자 일부 색·강조</p>
+                    <div class="demo-note"><p>가격 <span class="mini-span">1,000원</span> 입니다</p></div>
+                </details>
+
+                <details>
+                    <summary>&lt;em&gt; 강조</summary>
+                    <code>&lt;em&gt;중요&lt;/em&gt;</code>
+                    <p>의미상 강조(보통 기울임으로 표시).</p>
+                    <p class="use">💡 문장 속 강조</p>
+                    <div class="demo-note"><p>이건 <em>정말</em> 중요해요</p></div>
+                </details>
+
+                <details>
+                    <summary>&lt;button&gt; 버튼</summary>
+                    <code>&lt;button&gt;누르기&lt;/button&gt;</code>
+                    <p>클릭할 수 있는 버튼 요소.</p>
+                    <p class="use">💡 동작 실행, 제출</p>
+                    <div class="demo-note"><button type="button" class="mini-btn">눌러보기</button></div>
+                </details>
+
+                <details>
+                    <summary>&lt;form&gt; 폼</summary>
+                    <code>&lt;form&gt; …입력들… &lt;/form&gt;</code>
+                    <p>입력 요소들을 묶는 폼. 퀴즈 보기들을 담았어요.</p>
+                    <p class="use">💡 퀴즈·설문·입력 묶음</p>
+                    <div class="demo-note"><form class="mini-form"><input type="text" placeholder="입력칸"></form></div>
+                </details>
+
+                <details>
+                    <summary>&lt;input&gt; / &lt;label&gt;</summary>
+                    <code>&lt;input type="radio" id="a"&gt;&lt;label for="a"&gt;보기&lt;/label&gt;</code>
+                    <p>선택·입력 요소와, 그 이름표(label). label 클릭으로도 선택돼요.</p>
+                    <p class="use">💡 퀴즈 보기 선택</p>
+                    <div class="demo-note"><input type="radio" id="demo-r"><label for="demo-r"> 나를 클릭</label></div>
+                </details>
+
+                <details>
+                    <summary>&lt;details&gt; / &lt;summary&gt;</summary>
+                    <code>&lt;details&gt;&lt;summary&gt;제목&lt;/summary&gt;내용&lt;/details&gt;</code>
+                    <p>클릭하면 펼쳐지는 접기 상자. 지금 이 상자가 바로 그거예요!</p>
+                    <p class="use">💡 FAQ, 정답 숨기기</p>
+                    <div class="demo-note"><details><summary>더보기</summary>숨어있던 내용 등장!</details></div>
+                </details>
+            </div>
+
+            <!-- ---- CSS 속성 10개 ---- -->
+            <div class="notes-col">
+                <h3>CSS 속성 (10)</h3>
+
+                <details>
+                    <summary>박스 모델 (margin·padding·border)</summary>
+                    <code>padding:12px; border:2px solid; margin:8px;</code>
+                    <p>모든 요소는 내용 → padding(안여백) → border(선) → margin(바깥여백) 순의 상자예요.</p>
+                    <p class="use">💡 요소 간 간격·여백 조절</p>
+                    <div class="demo-note"><div class="demo-boxmodel">내용</div></div>
+                </details>
+
+                <details>
+                    <summary>flexbox (display:flex)</summary>
+                    <code>display:flex; justify-content:center;</code>
+                    <p>자식을 가로로 배치하고 3종 정렬로 위치를 잡아요.</p>
+                    <p class="use">💡 네비·캐러셀·가운데 정렬</p>
+                    <div class="demo-note"><div class="demo-flex"><i>홈</i><i>내용</i><i>출처</i></div></div>
+                </details>
+
+                <details>
+                    <summary>grid (grid-template-columns)</summary>
+                    <code>display:grid; grid-template-columns:repeat(3,1fr);</code>
+                    <p>2차원 격자로 공간을 균등하게 나눠요.</p>
+                    <p class="use">💡 카드 목록 3열 배치</p>
+                    <div class="demo-note"><div class="demo-grid"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i></div></div>
+                </details>
+
+                <details>
+                    <summary>position (sticky)</summary>
+                    <code>position:sticky; top:0;</code>
+                    <p>스크롤해도 지정 위치(top:0)에 붙어 따라와요. 이 페이지 상단 메뉴가 그 예.</p>
+                    <p class="use">💡 상단 고정 네비</p>
+                    <div class="demo-note"><div class="demo-pos"><span class="badge">고정</span>스크롤 영역</div></div>
+                </details>
+
+                <details>
+                    <summary>:hover 가상 클래스</summary>
+                    <code>.box:hover{ background:pink; }</code>
+                    <p>마우스를 올렸을 때만 적용되는 상태 스타일.</p>
+                    <p class="use">💡 버튼·카드 호버 효과</p>
+                    <div class="demo-note"><div class="demo-hover">마우스 올려보세요</div></div>
+                </details>
+
+                <details>
+                    <summary>transition / @keyframes 애니메이션</summary>
+                    <code>transition:.3s; / @keyframes float{…}</code>
+                    <p>transition은 상태가 바뀔 때 부드럽게, @keyframes는 스스로 반복 움직여요.</p>
+                    <p class="use">💡 부드러운 호버, 둥둥 효과</p>
+                    <div class="demo-note"><div class="demo-anim">둥둥</div></div>
+                </details>
+
+                <details>
+                    <summary>transform (3D 뒤집기)</summary>
+                    <code>transform:rotateY(180deg);</code>
+                    <p>요소를 이동·회전·확대. 3D 회전으로 카드를 뒤집을 수 있어요.</p>
+                    <p class="use">💡 카드 뒤집기, 회전</p>
+                    <div class="demo-note">
+                        <div class="demo-flip"><div class="demo-flip-inner"><div class="demo-flip-front">앞</div><div class="demo-flip-back">뒤</div></div></div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>box-shadow + 그라데이션 (네온)</summary>
+                    <code>box-shadow:0 0 25px rgba(236,72,153,.7);</code>
+                    <p>요소 밖으로 빛·그림자를 번지게 해 네온 효과를 만들어요.</p>
+                    <p class="use">💡 네온 카드·버튼 강조</p>
+                    <div class="demo-note"><div class="demo-neon">NEON</div></div>
+                </details>
+
+                <details>
+                    <summary>:root 변수 (var)</summary>
+                    <code>:root{ --main:#ec4899; } color:var(--main);</code>
+                    <p>색·간격에 이름을 붙여 한 곳에서 관리해요. 한 줄만 고치면 전체 반영.</p>
+                    <p class="use">💡 테마 색 일괄 관리</p>
+                    <div class="demo-note"><span class="sw sw1"></span><span class="sw sw2"></span> 같은 변수 색</div>
+                </details>
+
+                <details>
+                    <summary>@media 반응형</summary>
+                    <code>@media (max-width:600px){ … }</code>
+                    <p>화면 너비에 따라 다른 스타일 적용. 좁으면 카드를 세로로 쌓아요.</p>
+                    <p class="use">💡 모바일 대응</p>
+                    <div class="demo-note">창을 좁히면 카드가 <b>세로로</b> 재배치돼요 📱</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 섹션③ 퀴즈 : 목표 → 코드 보기 → 라이브 프리뷰 → 정답 ===== -->
+    <section id="quiz">
+        <h2>③ HTML · CSS 퀴즈</h2>
+        <p class="section-sub">목표 화면을 보고 <b>알맞은 코드 보기</b>를 고르면, 아래 프리뷰에 실제로 적용돼요!</p>
+
+        <!-- Q1 flex 가로 정렬 -->
+        <div class="quiz" id="q1">
+            <h3>Q1. 박스 3개를 <b>오른쪽 끝</b>으로 모으려면?</h3>
+            <div class="q-target">
+                <span class="tag">🎯 목표</span>
+                <div class="demo demo-flex j-end"><i>홈</i><i>내용</i><i>출처</i></div>
+            </div>
+            <form class="q-body">
+                <input type="radio" name="q1" id="q1a" class="opt">
+                <label for="q1a"><code>justify-content: flex-start</code></label>
+                <input type="radio" name="q1" id="q1b" class="opt">
+                <label for="q1b"><code>justify-content: center</code></label>
+                <input type="radio" name="q1" id="q1c" class="opt correct">
+                <label for="q1c"><code>justify-content: flex-end</code></label>
+
+                <input type="radio" name="q1" id="q1-reset" class="opt-reset" checked>
+                <label for="q1-reset" class="reset">🔄 초기화</label>
+
+                <div class="q-preview">
+                    <span class="tag">🖥️ 내 답 미리보기</span>
+                    <div class="demo demo-flex prev1"><i>홈</i><i>내용</i><i>출처</i></div>
+                </div>
+                <p class="result"></p>
+            </form>
+        </div>
+
+        <!-- Q2 flex 세로 정렬 -->
+        <div class="quiz" id="q2">
+            <h3>Q2. 박스를 세로(위아래) <b>가운데</b>로 두려면?</h3>
+            <div class="q-target">
+                <span class="tag">🎯 목표</span>
+                <div class="demo demo-flex tall a-center"><i>홈</i><i>내용</i><i>출처</i></div>
+            </div>
+            <form class="q-body">
+                <input type="radio" name="q2" id="q2a" class="opt">
+                <label for="q2a"><code>align-items: flex-start</code></label>
+                <input type="radio" name="q2" id="q2b" class="opt correct">
+                <label for="q2b"><code>align-items: center</code></label>
+                <input type="radio" name="q2" id="q2c" class="opt">
+                <label for="q2c"><code>align-items: flex-end</code></label>
+
+                <input type="radio" name="q2" id="q2-reset" class="opt-reset" checked>
+                <label for="q2-reset" class="reset">🔄 초기화</label>
+
+                <div class="q-preview">
+                    <span class="tag">🖥️ 내 답 미리보기</span>
+                    <div class="demo demo-flex tall prev2"><i>홈</i><i>내용</i><i>출처</i></div>
+                </div>
+                <p class="result"></p>
+            </form>
+        </div>
+
+        <!-- Q3 grid 3열 -->
+        <div class="quiz" id="q3">
+            <h3>Q3. 박스 6개를 <b>3열 격자</b>로 배치하려면?</h3>
+            <div class="q-target">
+                <span class="tag">🎯 목표</span>
+                <div class="demo demo-grid c3"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i></div>
+            </div>
+            <form class="q-body">
+                <input type="radio" name="q3" id="q3a" class="opt">
+                <label for="q3a"><code>grid-template-columns: 1fr</code></label>
+                <input type="radio" name="q3" id="q3b" class="opt">
+                <label for="q3b"><code>grid-template-columns: repeat(2, 1fr)</code></label>
+                <input type="radio" name="q3" id="q3c" class="opt correct">
+                <label for="q3c"><code>grid-template-columns: repeat(3, 1fr)</code></label>
+
+                <input type="radio" name="q3" id="q3-reset" class="opt-reset" checked>
+                <label for="q3-reset" class="reset">🔄 초기화</label>
+
+                <div class="q-preview">
+                    <span class="tag">🖥️ 내 답 미리보기</span>
+                    <div class="demo demo-grid prev3"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i></div>
+                </div>
+                <p class="result"></p>
+            </form>
+        </div>
+
+        <!-- Q4 transform 회전 -->
+        <div class="quiz" id="q4">
+            <h3>Q4. 박스를 <b>45° 기울이려면</b>?</h3>
+            <div class="q-target">
+                <span class="tag">🎯 목표</span>
+                <div class="demo demo-one"><b class="tf tf-rotate">45°</b></div>
+            </div>
+            <form class="q-body">
+                <input type="radio" name="q4" id="q4a" class="opt correct">
+                <label for="q4a"><code>transform: rotate(45deg)</code></label>
+                <input type="radio" name="q4" id="q4b" class="opt">
+                <label for="q4b"><code>transform: scale(1.5)</code></label>
+                <input type="radio" name="q4" id="q4c" class="opt">
+                <label for="q4c"><code>transform: translateX(40px)</code></label>
+
+                <input type="radio" name="q4" id="q4-reset" class="opt-reset" checked>
+                <label for="q4-reset" class="reset">🔄 초기화</label>
+
+                <div class="q-preview">
+                    <span class="tag">🖥️ 내 답 미리보기</span>
+                    <div class="demo demo-one"><b class="tf prev4">box</b></div>
+                </div>
+                <p class="result"></p>
+            </form>
+        </div>
+
+        <!-- Q5 원 만들기 -->
+        <div class="quiz" id="q5">
+            <h3>Q5. 네모를 <b>완전한 원</b>으로 만들려면?</h3>
+            <div class="q-target">
+                <span class="tag">🎯 목표</span>
+                <div class="demo demo-one"><b class="rd rd-50">원</b></div>
+            </div>
+            <form class="q-body">
+                <input type="radio" name="q5" id="q5a" class="opt">
+                <label for="q5a"><code>border-radius: 8px</code></label>
+                <input type="radio" name="q5" id="q5b" class="opt correct">
+                <label for="q5b"><code>border-radius: 50%</code></label>
+                <input type="radio" name="q5" id="q5c" class="opt">
+                <label for="q5c"><code>border-radius: 0</code></label>
+
+                <input type="radio" name="q5" id="q5-reset" class="opt-reset" checked>
+                <label for="q5-reset" class="reset">🔄 초기화</label>
+
+                <div class="q-preview">
+                    <span class="tag">🖥️ 내 답 미리보기</span>
+                    <div class="demo demo-one"><b class="rd prev5">box</b></div>
+                </div>
+                <p class="result"></p>
+            </form>
+        </div>
+
+        <!-- Q6 카드 뒤집기 -->
+        <div class="quiz" id="q6">
+            <h3>Q6. 카드를 <b>뒤집어 뒷면</b>이 보이게 하려면?</h3>
+            <div class="q-target">
+                <span class="tag">🎯 목표</span>
+                <div class="demo demo-one">
+                    <div class="flip"><div class="flip-inner is-back"><div class="flip-front">앞</div><div class="flip-back">뒤</div></div></div>
+                </div>
+            </div>
+            <form class="q-body">
+                <input type="radio" name="q6" id="q6a" class="opt correct">
+                <label for="q6a"><code>transform: rotateY(180deg)</code></label>
+                <input type="radio" name="q6" id="q6b" class="opt">
+                <label for="q6b"><code>transform: rotate(180deg)</code></label>
+                <input type="radio" name="q6" id="q6c" class="opt">
+                <label for="q6c"><code>transform: scaleX(-1)</code></label>
+
+                <input type="radio" name="q6" id="q6-reset" class="opt-reset" checked>
+                <label for="q6-reset" class="reset">🔄 초기화</label>
+
+                <div class="q-preview">
+                    <span class="tag">🖥️ 내 답 미리보기</span>
+                    <div class="demo demo-one">
+                        <div class="flip"><div class="flip-inner prev6"><div class="flip-front">앞</div><div class="flip-back">뒤</div></div></div>
+                    </div>
+                </div>
+                <p class="result"></p>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>🎮 미니프로젝트 · CSS 19 · 정기준 — 지금까지 배운 HTML · CSS로 만들었어요</p>
+    </footer>
+
 </body>
 </html>
-
-
-<!-- 
-    
-미니프로젝트 주제 (하나의 웹에서 아래 3가지의 내용이 들어있어야함)
-1. 마음에 드는 웹 사이트 참고 의견 및 분석
-
- 2. html, css 정리 내용
-
-3. html, css 퀴즈 5개
-
-게임을 통해 html,CSS를 학습할 수 있음
-해당 아이디어를 통해 3번의 html,css 퀴즈 5개 구현하면 좋을것으로 보임
- Flexbox Froggy & Grid Garden (flexboxfroggy.com / cssgridgarden.com)
-
- codepen에서 아래 링크에 나온 코드로 구현한 것처럼 웹에 게임들이 보여지면 좋을 것으로 보인다.
- https://codepen.io/thebabydino/pen/dPXVyqN
-
- 게임 속에 html 퀴즈가 있고 퀴즈를 맞춤으로써 해당 게임에서 설명하려는 html,css 내용을 표시
- 홈에서 위 코드펜 링크의 웹구조와 비슷하게 아래엔 게임 메뉴들이 돌아가고 
- 홈의 가운데 위쪽 위치에 html,css 정리 내용을 알 수 있도록 추가적으로 메뉴 링크가 들어가면 좋을것같다.
- 그리고 각 정리 내용은 간단 명료하게 예시코드와 설명만 있으면 좋을거같아.
- 퀴즈 관련해선 최소 5개 최대 10개 사이로 해서 낼 수 있으면 좋을것 같아.
- 
--->
