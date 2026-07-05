@@ -4,7 +4,7 @@
 
 밋밋한 카드도 그림자를 넣으면 입체감이 생긴다. 여기에 마우스를 올리면 살짝 떠오르는 인터랙션까지 더해 봤다.
 
-[이미지 : 기본 상태 — 은은한 그림자가 있는 분홍 카드]
+![기본 상태 — 은은한 그림자가 있는 분홍 카드](C:/Users/jun/Desktop/블로그 업로드용 이미지/03_box-shadow-01-base.png)
 
 ## HTML
 
@@ -69,7 +69,7 @@
 
 `transition: all 0.3s ease` 덕분에 이 변화들이 뚝 바뀌지 않고 0.3초에 걸쳐 스르륵 이어진다.
 
-[이미지 : hover 시 — 위로 떠오르고 그림자가 진해진 카드]
+![hover 시 — 위로 떠오르고 그림자가 진해진 카드](C:/Users/jun/Desktop/블로그 업로드용 이미지/03_box-shadow-02-hover.png)
 
 > 💡 `transition`(변화를 몇 초에 걸쳐)과 `transform`(위치 옮기기)은 이전 글에서 자세히 다뤘다. 개념이 헷갈리면 [transition과 timing-function 글](../260702/07_transition-timing.md)을 참고하자.
 

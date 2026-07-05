@@ -11,7 +11,7 @@ CSS 요소는 기본적으로 **block** 아니면 **inline** 성격을 가진다
 - **block(블록)** : 한 줄을 **통째로** 차지한다. 다음 요소는 아래로 내려간다. `width`·`height`를 줄 수 있다. (예: `<div>`, `<p>`, `<h1>`)
 - **inline(인라인)** : 글자처럼 **옆으로** 흐른다. 딱 내용만큼만 차지하고, `width`·`height`를 줘도 무시된다. (예: `<span>`, `<a>`)
 
-[이미지 : block 3개는 세로로 쌓이고, inline 3개는 한 줄에 옆으로 붙은 비교 화면]
+![block 3개는 세로로 쌓이고, inline 3개는 한 줄에 옆으로 붙은 비교 화면](C:/Users/jun/Desktop/블로그 업로드용 이미지/05_display-property-01-block-inline.png)
 
 ## display 값별 정리
 
@@ -54,7 +54,7 @@ CSS 요소는 기본적으로 **block** 아니면 **inline** 성격을 가진다
 - **inline처럼 옆으로 나열되면서** block처럼 **크기·여백을 줄 수 있다.**
 - 버튼·칩·밑줄 장식처럼 "옆으로 붙지만 크기는 갖고 싶은" 요소에 딱. (가상요소 글의 `.underline-deco`가 이 경우)
 
-[이미지 : inline-block 요소들이 옆으로 나란히 붙으면서 각자 크기를 가진 화면]
+![inline-block 요소들이 옆으로 나란히 붙으면서 각자 크기를 가진 화면](C:/Users/jun/Desktop/블로그 업로드용 이미지/05_display-property-02-inline-block.png)
 
 ### 4) display: none
 
@@ -67,7 +67,7 @@ CSS 요소는 기본적으로 **block** 아니면 **inline** 성격을 가진다
 - 화면에서 **완전히 사라진다.** 공간도 차지하지 않는다.
 - (참고: `visibility: hidden`은 안 보이지만 **공간은 남는다** — 이 점이 다르다.)
 
-[이미지 : display:none 적용 전(요소 보임)과 후(요소와 공간 모두 사라짐) 비교]
+![display:none 적용 전(요소 보임)과 후(요소와 공간 모두 사라짐) 비교](C:/Users/jun/Desktop/블로그 업로드용 이미지/05_display-property-03-none.png)
 
 ### 5) display: flex
 
