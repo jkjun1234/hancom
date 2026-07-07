@@ -35,6 +35,6 @@ document.querySelector("#rename").addEventListener("click", () => {
 });
 
 // 색상 바꿀 내용 넣어보기
-document.querySelector("randomcolor").addEventListener("click", () => {
-    // out.setAttribute("color", #blue);
+document.querySelector("#randomcolor").addEventListener("click", () => {
+     out.setAttribute("color", #blue);
 });
