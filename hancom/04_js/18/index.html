@@ -4,9 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/main.css">
-    <title>js 18 - 미니 프로젝트 (HTML + CSS +JS)</title>
+    <title>웹 개발 기초 개념 퀴즈</title>
 </head>
 <body>
+    <div class="container">
+        <h1>웹 개발 기초 개념 퀴즈</h1>
+
+        <div class="card">
+            <div class="question" id="questionDisplay">
+                다음 중 시맨틱 태그는?
+            </div>
+
+            <div class="choices" id="choicesContainer">
+                <!-- JS에서 동적으로 생성 -->
+            </div>
+
+            <div class="explanation" id="explanationDisplay" style="display: none;">
+                <!-- 정답 설명 (선택 후 표시) -->
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="nextBtn">다음 문제</button>
+        </div>
+
+        <div class="progress">
+            <span id="progressText">1 / 10</span>
+        </div>
+    </div>
 
     <script src="scripts/main.js"></script>
 </body>
