@@ -4,7 +4,7 @@
 > 오늘 `App.jsx` 안에서 **직접 부품(컴포넌트)을 만들고 → Props로 값을 넘기고 → 조건에 따라 다르게 보여주기**까지 실습했다.
 > 잘 된 것도, 삽질한 것도 다 적어봄. (삽질이 사실 제일 기억에 남음ㅋㅋ)
 
-> 🖼️ **이미지 자리** — 글 대표 썸네일. `components/` 폴더 안에 `18`, `19`, `20`, `21`, `22`, `23` 번호 폴더들이 쭉 있는 탐색기 스크린샷. (오늘 만든 부품들 한눈에)
+<img src="images/blog_02_components-tree_01.png" width="340" alt="src/components 폴더 안에 18~23 번호 폴더로 나뉜 오늘 만든 컴포넌트들">
 
 ---
 
@@ -63,7 +63,8 @@ function App() {
 
 `<Hello />` 이렇게 태그처럼 쓰면 끝. 1편에서 봤던 `main.jsx → App.jsx` 연결 방식(`import` + 태그)이 **`App.jsx → Hello.jsx`에도 똑같이** 적용된다는 게 포인트였다.
 
-> 🖼️ **이미지 자리** — "안녕! / 반가워요~!"가 뜬 실제 브라우저 화면 스크린샷.
+<img src="images/blog_02_hello_01.png" width="240" alt="Hello 컴포넌트 - 안녕! 반가워요~! 화면">
+
 
 ---
 
@@ -125,7 +126,8 @@ export default Greeting
 
 같은 `Greeting` 부품 하나로 "Hello~! React!" / "Hello~! 기준!" 두 개가 나오는 게 신기했음. 이게 레고 블록 재사용이구나 싶었다.
 
-> 🖼️ **이미지 자리** — `Greeting`을 두 번 불러서 서로 다른 인사말 두 줄이 나온 화면 스크린샷.
+<img src="images/blog_02_greeting_01.png" width="420" alt="Greeting을 두 번 불러 Hello~! React! / Hello~! 기준! 두 줄이 나온 화면">
+
 
 ---
 
@@ -153,6 +155,10 @@ export default Profile
 ```
 
 `= "개발자"` 이렇게 매개변수에 기본값을 넣어두면, 안 넘겼을 때 알아서 채워진다.
+
+<img src="images/blog_02_profile_01.png" width="240" alt="Profile - 지니(프론트엔드), 이디자인(job 생략 → 개발자 기본값)">
+
+`이디자인`은 `job`을 안 넘겼는데도 "개발자"가 뜨는 게 보인다. 기본값이 먹은 것.
 
 ### 💥 삽질 기록 1 — `export default` 빼먹음
 
@@ -219,7 +225,11 @@ border: 3px solid aquamarine;
 **(3) `background` vs `background-color`**
 `background`는 색·이미지·포지션을 한 번에 넣는 축약 속성이라, 이미 `background-image`가 있는데 `background: color;`를 다시 쓰면 **이미지가 초기화돼서 사라진다.** 색만 바꿀 거면 `background-color`를 쓰는 게 안전.
 
-> 🖼️ **이미지 자리** — "삽질 → 수정" 비교 스크린샷 2장. (테두리 안 보이던 카드 vs `solid` 넣고 제대로 나온 카드)
+| 삽질 (버그) — 테두리 안 보임 | 수정 후 — `solid` 넣으니 나옴 |
+|:---:|:---:|
+| <img src="images/blog_02_card_01-bug.png" width="300" alt="border에 solid가 없어 테두리가 안 보이는 버그 카드"> | <img src="images/blog_02_card_02-fixed.png" width="300" alt="border: 3px solid aquamarine로 고쳐 테두리가 나온 카드"> |
+
+왼쪽은 `border: 100px` + `border-color`만 줘서 **테두리가 아예 안 보이고**(그리고 `display: column`이 무효라 글자도 좌상단에 붙어 있다), 오른쪽은 `display:flex; flex-direction:column` + `border: 3px solid aquamarine`로 고쳐서 **아쿠아마린 테두리가 제대로 나오고 글자도 가운데** 정렬됐다.
 
 ---
 
@@ -229,14 +239,21 @@ border: 3px solid aquamarine;
 
 ```jsx
 // components/22/Avatar.jsx
+import './Avatar.css'
+
 const Avatar = ({ name, online }) => {
   return (
     <div className="friends-box">
+      <h2 className="friends">친구 목록</h2>
+      <p>상태 표시</p>
+      <p>로그인 : ⭐ 로그아웃 : 😴</p>
       <h3>{name}</h3>
       {online ? <p>⭐</p> : <p>😴</p>}   {/* 삼항연산자로 둘 중 하나 */}
     </div>
   )
 }
+
+export default Avatar
 ```
 
 ```jsx
@@ -259,7 +276,8 @@ false, 0, "", null, undefined, NaN
 ```
 이 6개 빼고는 **전부 참(truthy)**. `"false"`도 참이라는 게 함정. (이거 이해하고 나니까 조건부 렌더링이 왜 이상하게 동작했는지 다 설명됨)
 
-> 🖼️ **이미지 자리** — 친구 목록에 온라인(⭐)/오프라인(😴)이 섞여 나온 화면 스크린샷.
+<img src="images/blog_02_avatar_01.png" width="480" alt="Avatar - 온라인(정기준 ⭐)/오프라인(기준 😴)이 섞여 나온 친구 목록 화면">
+
 
 ---
 
@@ -281,6 +299,10 @@ export default Badge
 - JSX에서 인라인 스타일은 `style={{ ... }}` 처럼 **중괄호 2개**(객체) 로 넣는다.
 
 시간이 부족해서 빠르게 넘어갔지만, App.jsx에 연결까지는 직접 처리했다.
+
+<img src="images/blog_02_badge_01.png" width="300" alt="Badge - type가 new면 초록, 아니면 빨강(crimson)">
+
+`type='new'`면 초록, 그 외면 빨강(crimson)으로 뱃지 색이 바뀐다.
 
 ---
 
