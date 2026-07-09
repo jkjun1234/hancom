@@ -1,0 +1,364 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "my-app",
+    "languages": [
+      "css",
+      "html",
+      "javascript",
+      "json",
+      "markdown"
+    ],
+    "frameworks": [
+      "React",
+      "Vite"
+    ],
+    "description": "Vite와 HMR을 활용한 React 최소 설정 템플릿으로, ESLint 규칙이 포함되어 있습니다.",
+    "analyzedAt": "2026-07-09T01:35:32.596Z",
+    "gitCommitHash": "a40662d93d9ee80baa60075cc6a0776aad8e95d7"
+  },
+  "nodes": [
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "React + Vite 최소 설정 템플릿의 개요 문서로, HMR 플러그인 선택 방법, React Compiler 비활성화 이유, 그리고 ESLint 설정 확장 방법을 3개 섹션으로 안내합니다.",
+      "tags": [
+        "문서",
+        "entry-point",
+        "개요",
+        "가이드"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:index.html",
+      "type": "file",
+      "name": "index.html",
+      "filePath": "index.html",
+      "summary": "Vite가 사용하는 애플리케이션 진입점 HTML 파일로, React 루트 마운트 대상인 `<div id=\"root\">`와 ES 모듈 방식으로 `/src/main.jsx`를 로드하는 script 태그를 포함합니다.",
+      "tags": [
+        "entry-point",
+        "markup",
+        "html",
+        "진입점"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Vite는 index.html을 프로젝트 루트에 두고 빌드 진입점으로 직접 사용하며, `type=\"module\"`로 ESM 기반 스크립트를 로드합니다."
+    },
+    {
+      "id": "config:package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "package.json",
+      "summary": "React 19와 Vite 8 기반 프로젝트의 패키지 설정 파일로, dev/build/lint/preview 스크립트와 ESLint, React 타입 정의 등 개발 의존성을 정의합니다.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "의존성",
+        "npm"
+      ],
+      "complexity": "simple",
+      "languageNotes": "`\"type\": \"module\"` 설정으로 프로젝트 전체에서 ESM 문법을 기본으로 사용하며, `@vitejs/plugin-react`는 Oxc 기반 Babel 대안 변환기를 활용합니다."
+    },
+    {
+      "id": "file:.understand-anything/.understandignore",
+      "type": "file",
+      "name": ".understandignore",
+      "filePath": ".understand-anything/.understandignore",
+      "summary": "understand-anything 플러그인이 분석을 건너뛸 경로 패턴을 정의하는 ignore 파일로, .gitignore 문법을 사용합니다.",
+      "tags": [
+        "설정",
+        "무시-파일",
+        "분석-제외"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.understand-anything/config.json",
+      "type": "config",
+      "name": "config.json",
+      "filePath": ".understand-anything/config.json",
+      "summary": "understand-anything 플러그인의 출력 언어 등 기본 동작을 제어하는 단일 키 설정 파일입니다.",
+      "tags": [
+        "설정",
+        "분석-도구",
+        "출력-언어"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:eslint.config.js",
+      "type": "file",
+      "name": "eslint.config.js",
+      "filePath": "eslint.config.js",
+      "summary": "Vite + React 프로젝트를 위한 ESLint flat config 설정 파일로, react-hooks 및 react-refresh 플러그인을 통해 코드 품질을 검사합니다.",
+      "tags": [
+        "설정",
+        "린터",
+        "코드-품질",
+        "개발-도구"
+      ],
+      "complexity": "simple",
+      "languageNotes": "ESLint v9의 flat config 형식을 사용하며, 기존 .eslintrc 파일 대신 eslint.config.js 단일 파일로 구성됩니다."
+    },
+    {
+      "id": "file:src/App.css",
+      "type": "file",
+      "name": "App.css",
+      "filePath": "src/App.css",
+      "summary": "App 컴포넌트의 레이아웃과 시각적 스타일을 정의하는 CSS 파일로, hero 이미지 애니메이션, 버튼 스타일, 섹션 배치를 포함합니다.",
+      "tags": [
+        "스타일시트",
+        "컴포넌트-스타일",
+        "애니메이션",
+        "레이아웃"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/App.jsx",
+      "type": "file",
+      "name": "App.jsx",
+      "filePath": "src/App.jsx",
+      "summary": "애플리케이션의 루트 React 컴포넌트로, HMR 안내와 카운터 버튼, 문서 및 소셜 링크 섹션을 렌더링하는 Vite 기본 템플릿 UI를 제공합니다.",
+      "tags": [
+        "컴포넌트",
+        "entry-point",
+        "루트-컴포넌트",
+        "템플릿"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/App.jsx:App",
+      "type": "function",
+      "name": "App",
+      "filePath": "src/App.jsx",
+      "lineRange": [
+        7,
+        120
+      ],
+      "summary": "useState hook으로 카운터 상태를 관리하고, hero 이미지·카운터 버튼·문서 링크·소셜 링크 섹션으로 구성된 메인 UI를 반환하는 루트 컴포넌트 함수입니다.",
+      "tags": [
+        "컴포넌트",
+        "hook",
+        "루트-컴포넌트",
+        "상태-관리"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/index.css",
+      "type": "file",
+      "name": "index.css",
+      "filePath": "src/index.css",
+      "summary": "전역 기본 스타일을 정의하는 CSS 파일로, 폰트, 색상 변수, 링크, 버튼 등 공통 UI 요소의 기준 스타일을 제공합니다.",
+      "tags": [
+        "전역-스타일",
+        "스타일시트",
+        "디자인-토큰",
+        "기본-설정"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "CSS 커스텀 속성(변수)을 사용해 다크/라이트 색상 테마를 :root 수준에서 정의합니다."
+    },
+    {
+      "id": "file:src/main.jsx",
+      "type": "file",
+      "name": "main.jsx",
+      "filePath": "src/main.jsx",
+      "summary": "React 애플리케이션의 진입점으로, ReactDOM.createRoot를 사용해 App 컴포넌트를 DOM의 #root 요소에 마운트합니다.",
+      "tags": [
+        "entry-point",
+        "부트스트랩",
+        "렌더링"
+      ],
+      "complexity": "simple",
+      "languageNotes": "React 18의 createRoot API를 사용하며, StrictMode로 컴포넌트를 감싸 개발 환경에서의 잠재적 문제를 감지합니다."
+    },
+    {
+      "id": "file:vite.config.js",
+      "type": "file",
+      "name": "vite.config.js",
+      "filePath": "vite.config.js",
+      "summary": "Vite 빌드 도구의 설정 파일로, React 플러그인을 등록하여 JSX 변환 및 HMR을 활성화합니다.",
+      "tags": [
+        "설정",
+        "빌드-도구",
+        "vite",
+        "개발-환경"
+      ],
+      "complexity": "simple",
+      "languageNotes": "defineConfig 헬퍼를 사용해 타입 안전 설정을 제공하며, @vitejs/plugin-react 플러그인 하나만으로 최소 구성을 유지합니다."
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:README.md",
+      "target": "file:index.html",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:package.json",
+      "target": "file:index.html",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/App.jsx",
+      "target": "file:src/App.css",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main.jsx",
+      "target": "file:src/App.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main.jsx",
+      "target": "file:src/index.css",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/App.jsx",
+      "target": "function:src/App.jsx:App",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/App.jsx",
+      "target": "function:src/App.jsx:App",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer:ui",
+      "name": "UI 레이어",
+      "description": "루트 App 컴포넌트와 전역·컴포넌트 수준 CSS 스타일을 포함하는 React UI 계층",
+      "nodeIds": [
+        "file:src/App.jsx",
+        "file:src/App.css",
+        "file:src/index.css"
+      ]
+    },
+    {
+      "id": "layer:config",
+      "name": "진입점 및 설정 레이어",
+      "description": "앱 부트스트랩 진입점(index.html, main.jsx), Vite·ESLint 빌드 도구 설정, npm 패키지 설정, 분석 도구 설정 파일을 포함하는 프로젝트 기반 계층",
+      "nodeIds": [
+        "file:index.html",
+        "file:src/main.jsx",
+        "config:package.json",
+        "file:vite.config.js",
+        "file:eslint.config.js",
+        "config:.understand-anything/config.json",
+        "file:.understand-anything/.understandignore"
+      ]
+    },
+    {
+      "id": "layer:documentation",
+      "name": "문서 레이어",
+      "description": "React + Vite 최소 설정 템플릿의 사용법과 개요를 설명하는 프로젝트 문서 계층",
+      "nodeIds": [
+        "document:README.md"
+      ]
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "title": "프로젝트 개요",
+      "description": "README.md는 이 프로젝트가 무엇인지 한눈에 파악할 수 있는 출발점입니다. React 19와 Vite 8을 함께 사용하는 최소 설정 템플릿이며, HMR(Hot Module Replacement) 플러그인 선택 방법과 ESLint 확장 방법을 안내합니다. 본격적인 코드 탐색에 앞서 이 문서를 통해 프로젝트의 목적과 기술 스택을 먼저 이해하세요.",
+      "nodeIds": [
+        "document:README.md"
+      ]
+    },
+    {
+      "order": 2,
+      "title": "패키지 설정 및 스크립트",
+      "description": "package.json은 프로젝트가 어떤 라이브러리에 의존하는지, 그리고 어떤 명령어로 실행·빌드·검사하는지를 정의합니다. `dev`, `build`, `lint`, `preview` 네 가지 스크립트가 개발 워크플로 전체를 담당하며, React 19와 Vite 8이 핵심 의존성으로 등록되어 있습니다. 이 파일을 보면 프로젝트의 기술 스택과 실행 방법을 단번에 파악할 수 있습니다.",
+      "nodeIds": [
+        "config:package.json"
+      ],
+      "languageLesson": "package.json의 `scripts` 필드는 `npm run <명령어>` 형식으로 실행합니다. `dependencies`는 프로덕션 실행에 필요한 패키지, `devDependencies`는 개발·빌드 시에만 필요한 패키지를 구분합니다."
+    },
+    {
+      "order": 3,
+      "title": "Vite 빌드 도구 설정",
+      "description": "vite.config.js는 Vite가 프로젝트를 어떻게 처리할지 지시하는 핵심 설정 파일입니다. React 플러그인을 등록함으로써 JSX 문법 변환이 가능해지고, 코드를 저장하는 즉시 브라우저에 반영되는 HMR이 활성화됩니다. README가 설명한 두 가지 플러그인(Babel 기반 vs SWC 기반) 중 어느 것이 선택되었는지 이 파일에서 확인할 수 있습니다.",
+      "nodeIds": [
+        "file:vite.config.js"
+      ],
+      "languageLesson": "Vite는 개발 서버와 프로덕션 번들러를 하나의 도구로 통합합니다. `defineConfig` 헬퍼 함수는 TypeScript 타입 추론과 자동완성을 제공하며, `plugins` 배열에 기능을 추가하는 방식으로 확장합니다."
+    },
+    {
+      "order": 4,
+      "title": "HTML 진입점 — 앱의 뼈대",
+      "description": "index.html은 Vite가 가장 먼저 읽는 파일로, 브라우저에 전달되는 HTML 문서의 기초 뼈대입니다. `<div id=\"root\">`는 React 앱이 마운트될 대상 요소이며, `<script type=\"module\" src=\"/src/main.jsx\">`는 브라우저가 ESM 방식으로 JavaScript를 직접 로드하도록 합니다. 전통적인 번들러와 달리 Vite는 이 HTML 파일 자체를 진입점으로 사용합니다.",
+      "nodeIds": [
+        "file:index.html"
+      ],
+      "languageLesson": "`<script type=\"module\">`은 브라우저가 ES Modules(ESM)를 네이티브로 이해한다는 선언입니다. Vite 개발 서버는 이를 활용해 번들 없이 파일을 직접 서빙하므로 빠른 HMR이 가능합니다."
+    },
+    {
+      "order": 5,
+      "title": "React 앱 부트스트랩 — main.jsx",
+      "description": "main.jsx는 React 앱이 실제로 실행되는 출발점입니다. `ReactDOM.createRoot`로 `#root` DOM 요소에 React 렌더 트리를 연결하고, 최상위 `<App />` 컴포넌트를 마운트합니다. 전역 스타일인 `index.css`도 이 파일에서 임포트되어 앱 전체에 적용됩니다. 앞서 본 `index.html`의 `<div id=\"root\">`와 `main.jsx`가 이 지점에서 연결됩니다.",
+      "nodeIds": [
+        "file:src/main.jsx"
+      ],
+      "languageLesson": "React 18부터 도입된 `ReactDOM.createRoot`는 Concurrent Mode를 활성화합니다. 기존의 `ReactDOM.render`와 달리 렌더링을 중단·재개할 수 있어 `Suspense` 등 최신 기능의 기반이 됩니다."
+    },
+    {
+      "order": 6,
+      "title": "전역 스타일 — index.css",
+      "description": "index.css는 앱 전체에 적용되는 기준 스타일을 정의하는 파일입니다. 폰트 패밀리, 색상 변수, 링크 스타일, 버튼의 기본 외형 등 공통 UI 요소의 토대를 이 파일 하나에서 관리합니다. `main.jsx`에서 임포트되므로 모든 컴포넌트가 이 스타일의 영향을 받습니다.",
+      "nodeIds": [
+        "file:src/index.css"
+      ],
+      "languageLesson": "CSS에서 `:root { --color: value; }` 문법으로 선언된 CSS 커스텀 프로퍼티(CSS 변수)는 `var(--color)` 형식으로 재사용됩니다. 전역 변수를 한 곳에서 관리하면 테마 변경이 훨씬 쉬워집니다."
+    },
+    {
+      "order": 7,
+      "title": "루트 컴포넌트 — App.jsx",
+      "description": "App.jsx는 화면에 렌더링되는 실제 UI의 핵심 컴포넌트입니다. `useState` hook을 사용하는 카운터 버튼, HMR 안내 메시지, 문서 및 소셜 링크 섹션을 포함하는 Vite 기본 템플릿 UI를 제공합니다. `main.jsx`가 앱을 DOM에 연결하는 역할이라면, `App.jsx`는 그 안의 실제 내용을 담당합니다.",
+      "nodeIds": [
+        "file:src/App.jsx"
+      ],
+      "languageLesson": "React의 `useState` hook은 함수형 컴포넌트 안에서 상태(state)를 선언하는 방법입니다. `const [count, setCount] = useState(0)` 형식으로 현재 값과 갱신 함수를 배열 구조 분해로 받아 사용합니다."
+    },
+    {
+      "order": 8,
+      "title": "컴포넌트 전용 스타일 — App.css",
+      "description": "App.css는 App 컴포넌트에 특화된 시각적 스타일을 담당합니다. logo 이미지 회전 애니메이션, 카드 레이아웃, 버튼 hover 효과 등이 정의되어 있으며, `App.jsx`에서 직접 임포트하여 사용됩니다. 전역 스타일(`index.css`)과 구분하여 컴포넌트별로 CSS를 분리하는 패턴을 보여줍니다.",
+      "nodeIds": [
+        "file:src/App.css"
+      ],
+      "languageLesson": "React에서 CSS 파일을 컴포넌트 파일마다 분리하는 방식은 의존 관계를 명확히 합니다. 단, 이 방식은 클래스명이 전역으로 적용되므로 충돌 위험이 있습니다. CSS Modules나 styled-components 같은 도구를 사용하면 스코프를 컴포넌트 단위로 격리할 수 있습니다."
+    },
+    {
+      "order": 9,
+      "title": "코드 품질 관리 — ESLint 설정",
+      "description": "eslint.config.js는 코드 작성 규칙을 자동으로 검사하는 ESLint의 설정 파일입니다. `react-hooks` 플러그인은 hook 사용 규칙 위반을 잡아내고, `react-refresh` 플러그인은 HMR이 올바르게 동작하도록 컴포넌트 내보내기 방식을 검사합니다. README에서 언급한 ESLint 확장 방법이 실제로 어떻게 적용되는지 이 파일에서 확인할 수 있습니다.",
+      "nodeIds": [
+        "file:eslint.config.js"
+      ],
+      "languageLesson": "ESLint의 'flat config' 형식(`eslint.config.js`)은 기존 `.eslintrc` 파일을 대체하는 최신 방식입니다. 배열 형태로 규칙 집합을 순서대로 적용하며, 각 객체는 적용 대상 파일 패턴과 규칙을 함께 선언합니다."
+    }
+  ]
+}

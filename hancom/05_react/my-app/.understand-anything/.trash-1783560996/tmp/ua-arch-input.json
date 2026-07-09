@@ -1,0 +1,29 @@
+{
+  "fileNodes": [
+    {"id":"document:README.md","type":"document","name":"README.md","filePath":"README.md","summary":"React + Vite 최소 설정 템플릿의 개요 문서","tags":["문서","entry-point","개요","가이드"]},
+    {"id":"file:index.html","type":"file","name":"index.html","filePath":"index.html","summary":"Vite 애플리케이션 진입점 HTML 파일","tags":["entry-point","markup","html","진입점"]},
+    {"id":"config:package.json","type":"config","name":"package.json","filePath":"package.json","summary":"React 19와 Vite 8 기반 프로젝트의 패키지 설정 파일","tags":["configuration","build-system","의존성","npm"]},
+    {"id":"file:.understand-anything/.understandignore","type":"file","name":".understandignore","filePath":".understand-anything/.understandignore","summary":"분석 제외 패턴 정의 파일","tags":["설정","무시-파일","분석-제외"]},
+    {"id":"config:.understand-anything/config.json","type":"config","name":"config.json","filePath":".understand-anything/config.json","summary":"understand-anything 플러그인 설정 파일","tags":["설정","분석-도구","출력-언어"]},
+    {"id":"file:eslint.config.js","type":"file","name":"eslint.config.js","filePath":"eslint.config.js","summary":"ESLint flat config 설정 파일","tags":["설정","린터","코드-품질","개발-도구"]},
+    {"id":"file:src/App.css","type":"file","name":"App.css","filePath":"src/App.css","summary":"App 컴포넌트의 레이아웃과 시각적 스타일을 정의하는 CSS 파일","tags":["스타일시트","컴포넌트-스타일","애니메이션","레이아웃"]},
+    {"id":"file:src/App.jsx","type":"file","name":"App.jsx","filePath":"src/App.jsx","summary":"애플리케이션의 루트 React 컴포넌트","tags":["컴포넌트","entry-point","루트-컴포넌트","템플릿"]},
+    {"id":"file:src/index.css","type":"file","name":"index.css","filePath":"src/index.css","summary":"전역 기본 스타일을 정의하는 CSS 파일","tags":["전역-스타일","스타일시트","디자인-토큰","기본-설정"]},
+    {"id":"file:src/main.jsx","type":"file","name":"main.jsx","filePath":"src/main.jsx","summary":"React 애플리케이션의 진입점","tags":["entry-point","부트스트랩","렌더링"]},
+    {"id":"file:vite.config.js","type":"file","name":"vite.config.js","filePath":"vite.config.js","summary":"Vite 빌드 도구의 설정 파일","tags":["설정","빌드-도구","vite","개발-환경"]}
+  ],
+  "importEdges": [
+    {"source":"file:src/App.jsx","target":"file:src/App.css","type":"imports"},
+    {"source":"file:src/main.jsx","target":"file:src/App.jsx","type":"imports"},
+    {"source":"file:src/main.jsx","target":"file:src/index.css","type":"imports"}
+  ],
+  "allEdges": [
+    {"source":"document:README.md","target":"file:index.html","type":"documents","weight":0.5},
+    {"source":"config:package.json","target":"file:index.html","type":"configures","weight":0.6},
+    {"source":"file:src/App.jsx","target":"file:src/App.css","type":"imports","weight":0.7},
+    {"source":"file:src/main.jsx","target":"file:src/App.jsx","type":"imports","weight":0.7},
+    {"source":"file:src/main.jsx","target":"file:src/index.css","type":"imports","weight":0.7},
+    {"source":"file:src/App.jsx","target":"function:src/App.jsx:App","type":"contains","weight":1.0},
+    {"source":"file:src/App.jsx","target":"function:src/App.jsx:App","type":"exports","weight":0.8}
+  ]
+}

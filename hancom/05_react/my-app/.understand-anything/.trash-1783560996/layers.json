@@ -1,0 +1,34 @@
+[
+  {
+    "id": "layer:ui",
+    "name": "UI 레이어",
+    "description": "루트 App 컴포넌트와 전역·컴포넌트 수준 CSS 스타일을 포함하는 React UI 계층",
+    "nodeIds": [
+      "file:src/App.jsx",
+      "file:src/App.css",
+      "file:src/index.css"
+    ]
+  },
+  {
+    "id": "layer:config",
+    "name": "진입점 및 설정 레이어",
+    "description": "앱 부트스트랩 진입점(index.html, main.jsx), Vite·ESLint 빌드 도구 설정, npm 패키지 설정, 분석 도구 설정 파일을 포함하는 프로젝트 기반 계층",
+    "nodeIds": [
+      "file:index.html",
+      "file:src/main.jsx",
+      "config:package.json",
+      "file:vite.config.js",
+      "file:eslint.config.js",
+      "config:.understand-anything/config.json",
+      "file:.understand-anything/.understandignore"
+    ]
+  },
+  {
+    "id": "layer:documentation",
+    "name": "문서 레이어",
+    "description": "React + Vite 최소 설정 템플릿의 사용법과 개요를 설명하는 프로젝트 문서 계층",
+    "nodeIds": [
+      "document:README.md"
+    ]
+  }
+]

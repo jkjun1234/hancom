@@ -1,0 +1,64 @@
+[
+  {
+    "order": 1,
+    "title": "프로젝트 개요",
+    "description": "README.md는 이 프로젝트가 무엇인지 한눈에 파악할 수 있는 출발점입니다. React 19와 Vite 8을 함께 사용하는 최소 설정 템플릿이며, HMR(Hot Module Replacement) 플러그인 선택 방법과 ESLint 확장 방법을 안내합니다. 본격적인 코드 탐색에 앞서 이 문서를 통해 프로젝트의 목적과 기술 스택을 먼저 이해하세요.",
+    "nodeIds": ["document:README.md"]
+  },
+  {
+    "order": 2,
+    "title": "패키지 설정 및 스크립트",
+    "description": "package.json은 프로젝트가 어떤 라이브러리에 의존하는지, 그리고 어떤 명령어로 실행·빌드·검사하는지를 정의합니다. `dev`, `build`, `lint`, `preview` 네 가지 스크립트가 개발 워크플로 전체를 담당하며, React 19와 Vite 8이 핵심 의존성으로 등록되어 있습니다. 이 파일을 보면 프로젝트의 기술 스택과 실행 방법을 단번에 파악할 수 있습니다.",
+    "nodeIds": ["config:package.json"],
+    "languageLesson": "package.json의 `scripts` 필드는 `npm run <명령어>` 형식으로 실행합니다. `dependencies`는 프로덕션 실행에 필요한 패키지, `devDependencies`는 개발·빌드 시에만 필요한 패키지를 구분합니다."
+  },
+  {
+    "order": 3,
+    "title": "Vite 빌드 도구 설정",
+    "description": "vite.config.js는 Vite가 프로젝트를 어떻게 처리할지 지시하는 핵심 설정 파일입니다. React 플러그인을 등록함으로써 JSX 문법 변환이 가능해지고, 코드를 저장하는 즉시 브라우저에 반영되는 HMR이 활성화됩니다. README가 설명한 두 가지 플러그인(Babel 기반 vs SWC 기반) 중 어느 것이 선택되었는지 이 파일에서 확인할 수 있습니다.",
+    "nodeIds": ["file:vite.config.js"],
+    "languageLesson": "Vite는 개발 서버와 프로덕션 번들러를 하나의 도구로 통합합니다. `defineConfig` 헬퍼 함수는 TypeScript 타입 추론과 자동완성을 제공하며, `plugins` 배열에 기능을 추가하는 방식으로 확장합니다."
+  },
+  {
+    "order": 4,
+    "title": "HTML 진입점 — 앱의 뼈대",
+    "description": "index.html은 Vite가 가장 먼저 읽는 파일로, 브라우저에 전달되는 HTML 문서의 기초 뼈대입니다. `<div id=\"root\">`는 React 앱이 마운트될 대상 요소이며, `<script type=\"module\" src=\"/src/main.jsx\">`는 브라우저가 ESM 방식으로 JavaScript를 직접 로드하도록 합니다. 전통적인 번들러와 달리 Vite는 이 HTML 파일 자체를 진입점으로 사용합니다.",
+    "nodeIds": ["file:index.html"],
+    "languageLesson": "`<script type=\"module\">`은 브라우저가 ES Modules(ESM)를 네이티브로 이해한다는 선언입니다. Vite 개발 서버는 이를 활용해 번들 없이 파일을 직접 서빙하므로 빠른 HMR이 가능합니다."
+  },
+  {
+    "order": 5,
+    "title": "React 앱 부트스트랩 — main.jsx",
+    "description": "main.jsx는 React 앱이 실제로 실행되는 출발점입니다. `ReactDOM.createRoot`로 `#root` DOM 요소에 React 렌더 트리를 연결하고, 최상위 `<App />` 컴포넌트를 마운트합니다. 전역 스타일인 `index.css`도 이 파일에서 임포트되어 앱 전체에 적용됩니다. 앞서 본 `index.html`의 `<div id=\"root\">`와 `main.jsx`가 이 지점에서 연결됩니다.",
+    "nodeIds": ["file:src/main.jsx"],
+    "languageLesson": "React 18부터 도입된 `ReactDOM.createRoot`는 Concurrent Mode를 활성화합니다. 기존의 `ReactDOM.render`와 달리 렌더링을 중단·재개할 수 있어 `Suspense` 등 최신 기능의 기반이 됩니다."
+  },
+  {
+    "order": 6,
+    "title": "전역 스타일 — index.css",
+    "description": "index.css는 앱 전체에 적용되는 기준 스타일을 정의하는 파일입니다. 폰트 패밀리, 색상 변수, 링크 스타일, 버튼의 기본 외형 등 공통 UI 요소의 토대를 이 파일 하나에서 관리합니다. `main.jsx`에서 임포트되므로 모든 컴포넌트가 이 스타일의 영향을 받습니다.",
+    "nodeIds": ["file:src/index.css"],
+    "languageLesson": "CSS에서 `:root { --color: value; }` 문법으로 선언된 CSS 커스텀 프로퍼티(CSS 변수)는 `var(--color)` 형식으로 재사용됩니다. 전역 변수를 한 곳에서 관리하면 테마 변경이 훨씬 쉬워집니다."
+  },
+  {
+    "order": 7,
+    "title": "루트 컴포넌트 — App.jsx",
+    "description": "App.jsx는 화면에 렌더링되는 실제 UI의 핵심 컴포넌트입니다. `useState` hook을 사용하는 카운터 버튼, HMR 안내 메시지, 문서 및 소셜 링크 섹션을 포함하는 Vite 기본 템플릿 UI를 제공합니다. `main.jsx`가 앱을 DOM에 연결하는 역할이라면, `App.jsx`는 그 안의 실제 내용을 담당합니다.",
+    "nodeIds": ["file:src/App.jsx"],
+    "languageLesson": "React의 `useState` hook은 함수형 컴포넌트 안에서 상태(state)를 선언하는 방법입니다. `const [count, setCount] = useState(0)` 형식으로 현재 값과 갱신 함수를 배열 구조 분해로 받아 사용합니다."
+  },
+  {
+    "order": 8,
+    "title": "컴포넌트 전용 스타일 — App.css",
+    "description": "App.css는 App 컴포넌트에 특화된 시각적 스타일을 담당합니다. logo 이미지 회전 애니메이션, 카드 레이아웃, 버튼 hover 효과 등이 정의되어 있으며, `App.jsx`에서 직접 임포트하여 사용됩니다. 전역 스타일(`index.css`)과 구분하여 컴포넌트별로 CSS를 분리하는 패턴을 보여줍니다.",
+    "nodeIds": ["file:src/App.css"],
+    "languageLesson": "React에서 CSS 파일을 컴포넌트 파일마다 분리하는 방식은 의존 관계를 명확히 합니다. 단, 이 방식은 클래스명이 전역으로 적용되므로 충돌 위험이 있습니다. CSS Modules나 styled-components 같은 도구를 사용하면 스코프를 컴포넌트 단위로 격리할 수 있습니다."
+  },
+  {
+    "order": 9,
+    "title": "코드 품질 관리 — ESLint 설정",
+    "description": "eslint.config.js는 코드 작성 규칙을 자동으로 검사하는 ESLint의 설정 파일입니다. `react-hooks` 플러그인은 hook 사용 규칙 위반을 잡아내고, `react-refresh` 플러그인은 HMR이 올바르게 동작하도록 컴포넌트 내보내기 방식을 검사합니다. README에서 언급한 ESLint 확장 방법이 실제로 어떻게 적용되는지 이 파일에서 확인할 수 있습니다.",
+    "nodeIds": ["file:eslint.config.js"],
+    "languageLesson": "ESLint의 'flat config' 형식(`eslint.config.js`)은 기존 `.eslintrc` 파일을 대체하는 최신 방식입니다. 배열 형태로 규칙 집합을 순서대로 적용하며, 각 객체는 적용 대상 파일 패턴과 규칙을 함께 선언합니다."
+  }
+]

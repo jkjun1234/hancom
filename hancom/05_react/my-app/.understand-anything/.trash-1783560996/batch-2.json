@@ -1,0 +1,127 @@
+{
+  "nodes": [
+    {
+      "id": "file:.understand-anything/.understandignore",
+      "type": "file",
+      "name": ".understandignore",
+      "filePath": ".understand-anything/.understandignore",
+      "summary": "understand-anything 플러그인이 분석을 건너뛸 경로 패턴을 정의하는 ignore 파일로, .gitignore 문법을 사용합니다.",
+      "tags": ["설정", "무시-파일", "분석-제외"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.understand-anything/config.json",
+      "type": "config",
+      "name": "config.json",
+      "filePath": ".understand-anything/config.json",
+      "summary": "understand-anything 플러그인의 출력 언어 등 기본 동작을 제어하는 단일 키 설정 파일입니다.",
+      "tags": ["설정", "분석-도구", "출력-언어"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:eslint.config.js",
+      "type": "file",
+      "name": "eslint.config.js",
+      "filePath": "eslint.config.js",
+      "summary": "Vite + React 프로젝트를 위한 ESLint flat config 설정 파일로, react-hooks 및 react-refresh 플러그인을 통해 코드 품질을 검사합니다.",
+      "tags": ["설정", "린터", "코드-품질", "개발-도구"],
+      "complexity": "simple",
+      "languageNotes": "ESLint v9의 flat config 형식을 사용하며, 기존 .eslintrc 파일 대신 eslint.config.js 단일 파일로 구성됩니다."
+    },
+    {
+      "id": "file:src/App.css",
+      "type": "file",
+      "name": "App.css",
+      "filePath": "src/App.css",
+      "summary": "App 컴포넌트의 레이아웃과 시각적 스타일을 정의하는 CSS 파일로, hero 이미지 애니메이션, 버튼 스타일, 섹션 배치를 포함합니다.",
+      "tags": ["스타일시트", "컴포넌트-스타일", "애니메이션", "레이아웃"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/App.jsx",
+      "type": "file",
+      "name": "App.jsx",
+      "filePath": "src/App.jsx",
+      "summary": "애플리케이션의 루트 React 컴포넌트로, HMR 안내와 카운터 버튼, 문서 및 소셜 링크 섹션을 렌더링하는 Vite 기본 템플릿 UI를 제공합니다.",
+      "tags": ["컴포넌트", "entry-point", "루트-컴포넌트", "템플릿"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/App.jsx:App",
+      "type": "function",
+      "name": "App",
+      "filePath": "src/App.jsx",
+      "lineRange": [7, 120],
+      "summary": "useState hook으로 카운터 상태를 관리하고, hero 이미지·카운터 버튼·문서 링크·소셜 링크 섹션으로 구성된 메인 UI를 반환하는 루트 컴포넌트 함수입니다.",
+      "tags": ["컴포넌트", "hook", "루트-컴포넌트", "상태-관리"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/index.css",
+      "type": "file",
+      "name": "index.css",
+      "filePath": "src/index.css",
+      "summary": "전역 기본 스타일을 정의하는 CSS 파일로, 폰트, 색상 변수, 링크, 버튼 등 공통 UI 요소의 기준 스타일을 제공합니다.",
+      "tags": ["전역-스타일", "스타일시트", "디자인-토큰", "기본-설정"],
+      "complexity": "moderate",
+      "languageNotes": "CSS 커스텀 속성(변수)을 사용해 다크/라이트 색상 테마를 :root 수준에서 정의합니다."
+    },
+    {
+      "id": "file:src/main.jsx",
+      "type": "file",
+      "name": "main.jsx",
+      "filePath": "src/main.jsx",
+      "summary": "React 애플리케이션의 진입점으로, ReactDOM.createRoot를 사용해 App 컴포넌트를 DOM의 #root 요소에 마운트합니다.",
+      "tags": ["entry-point", "부트스트랩", "렌더링"],
+      "complexity": "simple",
+      "languageNotes": "React 18의 createRoot API를 사용하며, StrictMode로 컴포넌트를 감싸 개발 환경에서의 잠재적 문제를 감지합니다."
+    },
+    {
+      "id": "file:vite.config.js",
+      "type": "file",
+      "name": "vite.config.js",
+      "filePath": "vite.config.js",
+      "summary": "Vite 빌드 도구의 설정 파일로, React 플러그인을 등록하여 JSX 변환 및 HMR을 활성화합니다.",
+      "tags": ["설정", "빌드-도구", "vite", "개발-환경"],
+      "complexity": "simple",
+      "languageNotes": "defineConfig 헬퍼를 사용해 타입 안전 설정을 제공하며, @vitejs/plugin-react 플러그인 하나만으로 최소 구성을 유지합니다."
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/App.jsx",
+      "target": "file:src/App.css",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main.jsx",
+      "target": "file:src/App.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main.jsx",
+      "target": "file:src/index.css",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/App.jsx",
+      "target": "function:src/App.jsx:App",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/App.jsx",
+      "target": "function:src/App.jsx:App",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

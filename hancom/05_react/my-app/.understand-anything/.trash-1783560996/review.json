@@ -1,0 +1,28 @@
+{
+  "issues": [],
+  "warnings": [
+    "Node 'file:.understand-anything/.understandignore' has no edges (orphan)",
+    "Node 'config:.understand-anything/config.json' has no edges (orphan)",
+    "Node 'file:eslint.config.js' has no edges (orphan)",
+    "Node 'file:vite.config.js' has no edges (orphan)"
+  ],
+  "stats": {
+    "totalNodes": 12,
+    "totalEdges": 7,
+    "totalLayers": 3,
+    "tourSteps": 9,
+    "nodeTypes": {
+      "document": 1,
+      "file": 8,
+      "config": 2,
+      "function": 1
+    },
+    "edgeTypes": {
+      "documents": 1,
+      "configures": 1,
+      "imports": 3,
+      "contains": 1,
+      "exports": 1
+    }
+  }
+}

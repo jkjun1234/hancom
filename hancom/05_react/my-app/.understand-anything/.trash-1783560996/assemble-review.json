@@ -1,0 +1,15 @@
+{
+  "fixedSectionOk": true,
+  "nodesRecovered": 0,
+  "edgesRestored": 0,
+  "crossBatchEdgesAdded": 0,
+  "typesRemapped": 0,
+  "complexityRemapped": 0,
+  "notes": [
+    "Merge report shows 0 dangling drops and no pattern-level ID corrections — batch output was already clean.",
+    "All 12 nodes have valid IDs, recognized types (file, config, document, function), and valid complexity values (simple or moderate). No action needed.",
+    "All 3 import relationships in the import map (src/App.jsx→src/App.css, src/main.jsx→src/App.jsx, src/main.jsx→src/index.css) have corresponding edges in the assembled graph with correct type, direction, and weight.",
+    "The duplicate edge pair (file:src/App.jsx → function:src/App.jsx:App with types 'contains' and 'exports') is intentional and correct — both edge types carry distinct semantic meaning.",
+    "No unknown node types, no unknown complexity values, no missing IDs, no dropped edges. Graph is complete and requires no manual intervention."
+  ]
+}

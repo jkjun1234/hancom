@@ -1,0 +1,49 @@
+{
+  "nodes": [
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "React + Vite 최소 설정 템플릿의 개요 문서로, HMR 플러그인 선택 방법, React Compiler 비활성화 이유, 그리고 ESLint 설정 확장 방법을 3개 섹션으로 안내합니다.",
+      "tags": ["문서", "entry-point", "개요", "가이드"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:index.html",
+      "type": "file",
+      "name": "index.html",
+      "filePath": "index.html",
+      "summary": "Vite가 사용하는 애플리케이션 진입점 HTML 파일로, React 루트 마운트 대상인 `<div id=\"root\">`와 ES 모듈 방식으로 `/src/main.jsx`를 로드하는 script 태그를 포함합니다.",
+      "tags": ["entry-point", "markup", "html", "진입점"],
+      "complexity": "simple",
+      "languageNotes": "Vite는 index.html을 프로젝트 루트에 두고 빌드 진입점으로 직접 사용하며, `type=\"module\"`로 ESM 기반 스크립트를 로드합니다."
+    },
+    {
+      "id": "config:package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "package.json",
+      "summary": "React 19와 Vite 8 기반 프로젝트의 패키지 설정 파일로, dev/build/lint/preview 스크립트와 ESLint, React 타입 정의 등 개발 의존성을 정의합니다.",
+      "tags": ["configuration", "build-system", "의존성", "npm"],
+      "complexity": "simple",
+      "languageNotes": "`\"type\": \"module\"` 설정으로 프로젝트 전체에서 ESM 문법을 기본으로 사용하며, `@vitejs/plugin-react`는 Oxc 기반 Babel 대안 변환기를 활용합니다."
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:README.md",
+      "target": "file:index.html",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:package.json",
+      "target": "file:index.html",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}
