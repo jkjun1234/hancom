@@ -1,0 +1,11 @@
+.user-card {
+    margin: 10px;
+    border: 3px solid;
+    border-radius: 5px;
+    border-color: orangered;
+}
+
+li {
+    list-style: none;
+    padding: 0;
+}
