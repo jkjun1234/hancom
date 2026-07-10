@@ -32,6 +32,7 @@ import './App.css'
 */
 
 import Weather from './components/39/Weather' // Weather API를 활용한 서울 기온 찍기 (useEffect, useState 를 사용)
+import WeatherAsyn from './components/39/WeatherAsyn'
 
 function App() {
   // const list = ['react', 'props', 'map'] //26번 예제 Tag.jsx 예제에 사용될 배열
@@ -87,6 +88,7 @@ function App() {
     </>
 
     <Weather/>
+    <WeatherAsyn/>
   </>
  )
 }

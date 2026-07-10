@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const Weather = () => {
     // temp: 기온 (초기값 null - 도착 전엔 값 없음) 
     // isLoading : 로딩 상태 확인하여 가져오기
-    const [temp, setTemp] = useState(true)
+    const [temp, setTemp] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
