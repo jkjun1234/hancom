@@ -4,7 +4,7 @@
 > `if`를 여러 번 쓰는 대신 **객체 하나로 딱 매핑**하는 법, **배열을 `.map()`으로 돌려서** 컴포넌트를 리스트로 뽑아내는 법, 그리고 완성 부품을 가져다 쓰는 **MUI 라이브러리**까지 훑었다.
 > 오늘 하루 분량이 꽤 많아서 총 4편으로 나눴는데, 이 글은 그 첫 편.
 
-🖼️ **이미지 자리** — src/components 폴더 안에 24~39 번호 폴더로 나뉜 오늘 만든 컴포넌트들
+<img src="images/blog_01_components-tree_01.png" width="380" alt="src/components 폴더 안에 24~39 번호 폴더로 나뉜 오늘 만든 컴포넌트들">
 
 ---
 
@@ -79,7 +79,7 @@ style={{color:cfg.color}, {border:cfg.border}, {border:cfg.borderColor}}
 style={{color:cfg.color, border:cfg.border, borderColor:cfg.borderColor}}
 ```
 
-🖼️ **이미지 자리** — Alert 컴포넌트 success/error/warning 세 개가 각자 색(초록/크림슨/주황) 테두리로 렌더링된 화면
+<img src="images/blog_01_alert_01.png" width="300" alt="Alert success/error/warning 세 개가 각자 색(초록/크림슨/주황) 테두리로 렌더링된 화면">
 
 ---
 
@@ -156,22 +156,37 @@ npm install @mui/material @emotion/react @emotion/styled
 ```jsx
 // components/27/SubmitButton.jsx
 // MUI 라이브러리를 사용한 버튼 구현
-
 import {Button, TextField, Typography, Alert, Card, Box} from '@mui/material'
 
 const SubmitButton = () => {
     return (
+        <>
+        <TextField placeholder='입력란'>입력</TextField>
+        <Typography>표시</Typography>
+        <Alert>피드백</Alert>
+        <Card>카드</Card>
+        <Box>박스</Box>
         <Button variant='contained' onClick={() => alert("눌러줘서 감사함다")
         }>눌러보시오 </Button>
+        </>
     )
 }
 
 export default SubmitButton
 ```
 
-재밌는 건, `import`에는 `TextField`, `Typography`, `Alert`, `Card`, `Box`까지 다 가져왔는데 **실제로 화면에 쓴 건 `Button` 하나뿐**이라는 것. 오늘 처음 훑어본 거라 일단 이름만 익히고, 나머지는 다음에 하나씩 붙여볼 예정이다. 직접 손으로 만든 Alert(24)랑, MUI가 이미 만들어둔 `<Alert>`가 뭐가 다른지 비교해보는 것도 재밌을 듯.
+`import`한 부품들을 하나씩 다 화면에 붙여봤다. 각각 뭐 하는 애인지 간단히:
 
-🖼️ **이미지 자리** — SubmitButton(MUI Button) "눌러보시오" 버튼이 렌더링된 화면
+- `<TextField>` — 글자 **입력칸**(테두리 있는 인풋)
+- `<Typography>` — **글씨(텍스트)** 표시용
+- `<Alert>` — **알림 박스** (MUI가 이미 만들어둔 완성형 — 초록 체크가 붙어 나온다)
+- `<Card>` — **카드 모양** 표면
+- `<Box>` — 배치용 **빈 상자**(`div` 같은 것)
+- `<Button variant='contained'>` — **꽉 찬 색 버튼**, `onClick`으로 클릭 동작 연결
+
+여기서 `variant='contained'`처럼 **props로 스타일·동작을 바꾸는 방식**이 우리가 직접 만든 컴포넌트랑 똑같다는 게 눈에 들어왔다. 특히 직접 손으로 만든 Alert(24)와, MUI가 이미 만들어둔 `<Alert>`를 나란히 보니 "완성된 부품을 가져다 쓴다"는 게 확 와닿았다.
+
+<img src="images/blog_01_mui-submit_01.png" width="300" alt="SubmitButton - TextField·Typography·Alert·Card·Box·Button 6개 MUI 컴포넌트가 렌더링된 화면">
 
 ---
 
