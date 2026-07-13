@@ -1,18 +1,19 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
+  --text: #4b463c;
+  --text-h: #241f1a;
+  --bg: #faf8f2;
+  --border: rgba(36, 31, 26, 0.16);
+  --grid-line: rgba(36, 31, 26, 0.05);
+  --code-bg: #ffffff;
+  --accent: #d64550;
+  --accent-bg: rgba(214, 69, 80, 0.08);
+  --accent-border: rgba(214, 69, 80, 0.45);
+  --social-bg: rgba(36, 31, 26, 0.05);
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: Georgia, 'Noto Serif KR', serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
@@ -32,15 +33,16 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
+    --text: #c9c2b3;
+    --text-h: #f3efe3;
+    --bg: #1b1a17;
+    --border: rgba(243, 239, 227, 0.16);
+    --grid-line: rgba(243, 239, 227, 0.06);
+    --code-bg: #242220;
+    --accent: #ff6b6b;
+    --accent-bg: rgba(255, 107, 107, 0.14);
+    --accent-border: rgba(255, 107, 107, 0.4);
+    --social-bg: rgba(243, 239, 227, 0.06);
     --shadow:
       rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
   }
@@ -52,6 +54,10 @@
 
 body {
   margin: 0;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 22px 22px;
 }
 
 #root {
@@ -67,7 +73,9 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3,
+h4 {
   font-family: var(--heading);
   font-weight: 500;
   color: var(--text-h);

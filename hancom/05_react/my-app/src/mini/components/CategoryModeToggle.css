@@ -1,0 +1,22 @@
+.mode-toggle {
+  display: inline-flex;
+  gap: 4px;
+  margin: 12px 0;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.mode-toggle__link {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.mode-toggle__link--active {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}

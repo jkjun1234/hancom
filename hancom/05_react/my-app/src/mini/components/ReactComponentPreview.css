@@ -1,0 +1,18 @@
+.demo-harness {
+  min-height: 80px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--code-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.demo-harness--error {
+  color: crimson;
+  font-family: var(--mono);
+  font-size: 13px;
+  white-space: pre-wrap;
+  text-align: left;
+}
