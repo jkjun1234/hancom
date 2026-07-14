@@ -3,7 +3,7 @@ const readline = require('readline')
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
 
 rl.question('메시지: ', (message) => {   // ← 입력받기 (엔터 치면 message에 담김)
-  fetch('http://192.168.10.29:3000/api/chat', {
+  fetch('http://192.168.20.10:3000/api/chat', {
     method: 'POST',                              // POST로 보냄 (GET은 body 못 실음)
     headers: { 'Content-Type': 'application/json' },   // "JSON 보낸다" 알림
     body: JSON.stringify({ message })             // 입력한 문장 → 문자열로 변환

@@ -10,4 +10,4 @@ app.post('/api/chat', (req, res) => {
   res.json({ ok: true, 받은문장: message })   // 답장 — '잘 받았다' 확인(영수증)
 })
 
-app.listen(3000, () => console.log('http://192.168.10.31/:3000'))
+app.listen(3000, () => console.log('http://192.168.10.31:3000'))
