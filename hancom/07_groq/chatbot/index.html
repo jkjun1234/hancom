@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Groq Chatbot</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <h1>Groq Chatbot</h1>
+        </header>
+
+        <!-- 대화 내용이 쌓이는 영역 -->
+        <main id="chat" class="chat"></main>
+
+        <!-- 입력 영역: form이라 Enter로도 전송(submit) 됨 -->
+        <form id="chat-form" class="input-area">
+            <textarea id="input" placeholder="메시지를 입력하세요..." rows="1"></textarea>
+            <button id="send-btn" type="submit">전송</button>
+        </form>
+    </div>
+
+    <script src="chatbot_app.js"></script>
+</body>
+</html>
