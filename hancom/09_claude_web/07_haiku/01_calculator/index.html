@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <main class="chassis">
+    <header class="chassis__header">
+      <span class="chassis__eyebrow">CALCULATOR</span>
+      <button class="icon-button icon-button--ghost icon-button--s" id="historyToggle" type="button" aria-label="계산 기록 열기">
+        <svg class="icon-button__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+      </button>
+    </header>
+
+    <section class="display" aria-live="polite">
+      <p class="display__expression" id="expression"></p>
+      <p class="display__current" id="current">0</p>
+    </section>
+
+    <div class="keypad">
+      <button class="key key--fn"  data-action="clear"    data-key="Escape">AC</button>
+      <button class="key key--fn"  data-action="sign">±</button>
+      <button class="key key--fn"  data-action="percent"  data-key="%">%</button>
+      <button class="key key--op"  data-action="operator" data-value="÷" data-key="/">÷</button>
+
+      <button class="key key--num" data-action="number" data-value="7" data-key="7">7</button>
+      <button class="key key--num" data-action="number" data-value="8" data-key="8">8</button>
+      <button class="key key--num" data-action="number" data-value="9" data-key="9">9</button>
+      <button class="key key--op"  data-action="operator" data-value="×" data-key="*">×</button>
+
+      <button class="key key--num" data-action="number" data-value="4" data-key="4">4</button>
+      <button class="key key--num" data-action="number" data-value="5" data-key="5">5</button>
+      <button class="key key--num" data-action="number" data-value="6" data-key="6">6</button>
+      <button class="key key--op"  data-action="operator" data-value="−" data-key="-">−</button>
+
+      <button class="key key--num" data-action="number" data-value="1" data-key="1">1</button>
+      <button class="key key--num" data-action="number" data-value="2" data-key="2">2</button>
+      <button class="key key--num" data-action="number" data-value="3" data-key="3">3</button>
+      <button class="key key--op"  data-action="operator" data-value="+" data-key="+">+</button>
+
+      <button class="key key--num key--wide" data-action="number" data-value="0" data-key="0">0</button>
+      <button class="key key--num" data-action="decimal" data-key=".">.</button>
+      <button class="key key--eq"  data-action="equals" data-key="Enter">=</button>
+    </div>
+  </main>
+
+  <div class="history-panel" id="historyPanel">
+    <header class="history-panel__header">
+      <h2 class="history-panel__title">계산 기록</h2>
+      <div class="history-panel__controls">
+        <button class="icon-button icon-button--ghost icon-button--s" id="historyPin" type="button" aria-label="고정" aria-pressed="false">
+          <svg class="icon-button__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+          </svg>
+        </button>
+        <button class="icon-button icon-button--ghost icon-button--s" id="historyClearBtn" type="button" aria-label="전체 삭제">
+          <svg class="icon-button__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M9 3v1H4v2h1v13c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V6h1V4h-5V3H9zm0 5h2v8H9V8zm4 0h2v8h-2V8z"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <div class="history-list-container">
+      <ul class="history-list" id="historyList"></ul>
+      <p class="history-empty" id="historyEmpty">계산 기록이 없습니다.</p>
+    </div>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+/* ── 디자인 토큰 (design.md 기준) ─────────────────── */
+:root {
+  --color-primary:           #e60023;
+  --color-primary-pressed:   #cc001f;
+  --color-canvas:            #ffffff;
+  --color-surface-soft:      #fbfbf9;
+  --color-surface-card:      #f6f6f3;
+  --color-secondary-bg:      #e5e5e0;
+  --color-secondary-pressed: #c8c8c1;
+  --color-ink:               #000000;
+  --color-mute:              #62625b;
+  --color-on-primary:        #ffffff;
+  --color-on-dark:           #ffffff;
+  --color-focus-outer:       #435ee5;
+  --color-focus-inner:       #ffffff;
+
+  --font-ui: 'Inter', -apple-system, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  --radius-md:   16px;
+  --radius-lg:   32px;
+  --radius-full: 9999px;
+}
+
+/* ── 리셋 & 베이스 ───────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--color-surface-soft);
+  font-family: var(--font-ui);
+}
+
+/* ── 계산기 카드 (feature-card 스펙: canvas / rounded-lg / 32px 패딩 / 그림자 없음) ── */
+.chassis {
+  width: 360px;
+  background: var(--color-canvas);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+}
+
+/* ── 디스플레이 (surface-card / rounded-md) ─────── */
+.display {
+  background: var(--color-surface-card);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.display__expression {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-mute);
+  text-align: right;
+  min-height: 20px;
+}
+
+.display__current {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.8px;
+  color: var(--color-ink);
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@keyframes flicker {
+  0%   { opacity: 1; }
+  40%  { opacity: 0.82; }
+  100% { opacity: 1; }
+}
+
+.display__current.is-updated {
+  animation: flicker 0.12s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .display__current.is-updated { animation: none; }
+}
+
+/* ── 키패드 ──────────────────────────────────────── */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+/* ── 버튼 공통 ───────────────────────────────────── */
+.key {
+  font-family: var(--font-ui);
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  height: 64px;
+  border-radius: var(--radius-md);
+  transition: background-color 0.08s ease, color 0.08s ease;
+}
+
+.key:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-focus-inner), 0 0 0 4px var(--color-focus-outer);
+}
+
+/* 숫자 키 */
+.key--num {
+  background: var(--color-surface-card);
+  color: var(--color-ink);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.key--num:active {
+  background: var(--color-secondary-bg);
+}
+
+/* 기능 키 (AC, ±, %) — 배경은 숫자 키와 동일, 텍스트만 낮춘 위계 */
+.key--fn {
+  background: var(--color-surface-card);
+  color: var(--color-mute);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.key--fn:active {
+  background: var(--color-secondary-bg);
+}
+
+/* 연산자 키 — filter-chip 스펙: 원형, 기본 surface-card/ink → 활성 시 ink/on-dark 반전 */
+.key--op {
+  width: 64px;
+  height: 64px;
+  justify-self: center;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-card);
+  color: var(--color-ink);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.key--op.is-active {
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+}
+
+/* = 키 — button-primary 스펙 */
+.key--eq {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.key--eq:active {
+  background: var(--color-primary-pressed);
+}
+
+/* 0 키 (2칸) */
+.key--wide {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 28px;
+}

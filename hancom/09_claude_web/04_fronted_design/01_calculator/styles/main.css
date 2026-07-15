@@ -1,0 +1,174 @@
+/* ── 디자인 토큰 ─────────────────────────────────── */
+:root {
+  --bg:       #E8E2D5;
+  --ink:      #2A2318;
+  --gold:     #B8A07A;
+  --red:      #D94F2B;
+  --key:      #2C2820;
+  --display:  #FFF3C4;
+  --fn-key:   #8A8070;
+
+  --font-display: 'Share Tech Mono', monospace;
+  --font-ui:      'DM Mono', monospace;
+}
+
+/* ── 리셋 & 베이스 ───────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #9E9488;
+  font-family: var(--font-ui);
+}
+
+/* ── 섀시 ────────────────────────────────────────── */
+.chassis {
+  width: 320px;
+  background: var(--bg);
+  border-radius: 16px 16px 28px 28px;
+  padding: 24px 20px 28px;
+  box-shadow:
+    0 2px 0 #c4bcac,
+    0 5px 0 #b0a898,
+    0 10px 32px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+/* ── 디스플레이 ──────────────────────────────────── */
+.display {
+  position: relative;
+  background: var(--display);
+  border-radius: 6px;
+  padding: 12px 16px 14px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow:
+    inset 0 2px 10px rgba(0, 0, 0, 0.18),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+/* 시그니처: LCD 스캔라인 텍스처 */
+.display::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.04) 2px,
+    rgba(0, 0, 0, 0.04) 4px
+  );
+  pointer-events: none;
+}
+
+.display__expression {
+  font-family: var(--font-display);
+  font-size: 12px;
+  color: rgba(42, 35, 24, 0.4);
+  text-align: right;
+  min-height: 18px;
+  letter-spacing: 0.05em;
+}
+
+.display__current {
+  font-family: var(--font-display);
+  font-size: 42px;
+  color: var(--ink);
+  text-align: right;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* 키 누를 때 숫자 미세 flicker */
+@keyframes flicker {
+  0%   { opacity: 1; }
+  40%  { opacity: 0.82; }
+  100% { opacity: 1; }
+}
+
+.display__current.is-updated {
+  animation: flicker 0.12s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .display__current.is-updated { animation: none; }
+}
+
+/* ── 키패드 ──────────────────────────────────────── */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* ── 버튼 공통 ───────────────────────────────────── */
+.key {
+  font-family: var(--font-ui);
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  height: 64px;
+  cursor: pointer;
+  transition: transform 0.06s, box-shadow 0.06s;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.35);
+}
+
+.key:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+}
+
+.key:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* 숫자 키 */
+.key--num {
+  background: var(--key);
+  color: #E8E2D5;
+}
+
+/* 기능 키 (AC, ±, %) */
+.key--fn {
+  background: var(--fn-key);
+  color: #F0EBE2;
+  font-size: 15px;
+}
+
+/* 연산자 키 */
+.key--op {
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 22px;
+}
+
+.key--op.is-active {
+  background: var(--ink);
+  color: var(--gold);
+}
+
+/* = 키 */
+.key--eq {
+  background: var(--red);
+  color: #fff;
+  font-size: 22px;
+  box-shadow: 0 4px 0 #a83820;
+}
+
+.key--eq:active {
+  box-shadow: 0 1px 0 #a83820;
+}
+
+/* 0 키 (2칸) */
+.key--wide {
+  grid-column: span 2;
+  text-align: left;
+  padding-left: 22px;
+}

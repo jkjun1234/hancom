@@ -1,0 +1,283 @@
+/* ---------------------------------------------------------------
+   Design tokens — 클래스101 Vibrant Design System (design.md) 발췌
+   단일 오렌지 강조(primary) + onView1~3 텍스트 위계 + 헤어라인 구획
+   ----------------------------------------------------------------*/
+:root {
+  --color-primary: #ff5d00;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #fcf5f1;
+  --color-on-primary-container: #ff5d00;
+  --color-error: #e30f32;
+
+  --color-background: #ffffff;
+  --color-surface1: rgba(0, 0, 0, 0.03);
+  --color-surface2: #ffffff;
+  --color-outline1: rgba(0, 0, 0, 0.05);
+  --color-outline2: rgba(0, 0, 0, 0.1);
+  --color-on-view-1: #0c0c0c;
+  --color-on-view-2: rgba(55, 55, 55, 0.8);
+  --color-on-view-3: #949494;
+  --color-on-view-primary: #ff5d00;
+
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 10000px;
+
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
+
+  --ease-out-quad: cubic-bezier(0.5, 1, 0.89, 1);
+  --duration-fast: 120ms;
+  --duration-base: 240ms;
+}
+
+:root[data-theme="dark"] {
+  --color-primary-container: #1c1008;
+  --color-on-primary-container: #ff7430;
+
+  --color-background: #0c0c0c;
+  --color-surface1: rgba(255, 255, 255, 0.05);
+  --color-surface2: #171717;
+  --color-outline1: rgba(255, 255, 255, 0.08);
+  --color-outline2: rgba(255, 255, 255, 0.15);
+  --color-on-view-1: #f3f3f3;
+  --color-on-view-2: rgba(243, 243, 243, 0.65);
+  --color-on-view-3: #747474;
+  --color-on-view-primary: #ff7430;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-primary-container: #1c1008;
+    --color-on-primary-container: #ff7430;
+
+    --color-background: #0c0c0c;
+    --color-surface1: rgba(255, 255, 255, 0.05);
+    --color-surface2: #171717;
+    --color-outline1: rgba(255, 255, 255, 0.08);
+    --color-outline2: rgba(255, 255, 255, 0.15);
+    --color-on-view-1: #f3f3f3;
+    --color-on-view-2: rgba(243, 243, 243, 0.65);
+    --color-on-view-3: #747474;
+    --color-on-view-primary: #ff7430;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-color: var(--color-background);
+  font-family: var(--font-sans);
+  transition: background-color var(--duration-base) var(--ease-out-quad);
+}
+
+/* ---------- Chassis (카드) ---------- */
+.chassis {
+  width: 100%;
+  max-width: 340px;
+  background: var(--color-surface2);
+  border: 1px solid var(--color-outline2);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: chassis-in var(--duration-base) var(--ease-out-quad) both;
+  transition: background-color var(--duration-base) var(--ease-out-quad),
+    border-color var(--duration-base) var(--ease-out-quad);
+}
+
+@keyframes chassis-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.chassis__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chassis__eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-on-view-3);
+}
+
+/* ---------- Theme toggle (시그니처 요소) ---------- */
+.theme-toggle {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--color-outline2);
+  border-radius: var(--radius-full);
+  background: var(--color-surface1);
+  color: var(--color-on-view-1);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color var(--duration-fast) var(--ease-out-quad),
+    border-color var(--duration-fast) var(--ease-out-quad);
+}
+
+.theme-toggle:hover { border-color: var(--color-on-view-primary); }
+
+.theme-toggle__icon {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.theme-toggle__icon--moon { display: none; }
+:root[data-theme="dark"] .theme-toggle__icon--sun { display: none; }
+:root[data-theme="dark"] .theme-toggle__icon--moon { display: block; }
+
+/* ---------- Display ---------- */
+.display {
+  border-top: 1px solid var(--color-outline1);
+  padding-top: 14px;
+  text-align: right;
+  min-height: 76px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 2px;
+}
+
+.display__expression {
+  margin: 0;
+  height: 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-on-view-2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.display__current {
+  margin: 0;
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--color-on-view-1);
+  font-variant-numeric: tabular-nums;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.display__current.is-error { color: var(--color-error); }
+
+.display__current.is-updated { animation: pulse var(--duration-fast) var(--ease-out-quad); }
+
+@keyframes pulse {
+  from { opacity: 0.4; transform: scale(0.98); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ---------- Keypad ---------- */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.key {
+  height: 60px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--color-on-view-1);
+  background: var(--color-surface1);
+  transition: transform var(--duration-fast) var(--ease-out-quad),
+    background-color var(--duration-fast) var(--ease-out-quad),
+    border-color var(--duration-fast) var(--ease-out-quad);
+}
+
+.key:active,
+.key.is-pressed {
+  transform: scale(0.95);
+}
+
+.key--wide {
+  grid-column: span 2;
+}
+
+.key--fn {
+  background: transparent;
+  color: var(--color-on-view-2);
+  font-weight: 500;
+}
+
+.key--fn:hover { background: var(--color-surface1); }
+
+.key--op {
+  background: transparent;
+  border: 1px solid var(--color-outline2);
+  color: var(--color-on-view-primary);
+  font-weight: 700;
+}
+
+.key--op.is-active {
+  background: var(--color-primary-container);
+  border-color: var(--color-primary);
+  color: var(--color-on-primary-container);
+}
+
+.key--eq {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+}
+
+.key:focus-visible,
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ---------- Hint ---------- */
+.hint {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--color-on-view-3);
+  text-align: center;
+}
+
+.hint kbd {
+  font-family: inherit;
+  font-size: 10px;
+  border: 1px solid var(--color-outline2);
+  border-radius: 4px;
+  padding: 1px 4px;
+  margin: 0 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .chassis { max-width: 100%; }
+  .key { height: 56px; font-size: 18px; }
+  .display__current { font-size: 38px; }
+}
