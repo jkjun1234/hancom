@@ -1,0 +1,11 @@
+# 미터 를 피트로 변환하는 함수
+# 1m = 3.28084 ft
+
+# 함수 정의
+# def 함수명 ():
+def meters_to_feet(meters):
+    feet = meters * 3.28084
+    print(feet)
+
+
+meters_to_feet(10)
