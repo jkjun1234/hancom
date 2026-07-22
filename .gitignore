@@ -1,0 +1,27 @@
+# 모델 가중치 (실행 시 자동 다운로드되므로 깃에 넣지 않음)
+*.pt
+*.onnx
+weights/
+*_openvino_model/
+
+# 데이터셋 / 대용량 자료
+/images/
+*.zip
+
+# 실행 산출물
+*.npy
+output_result.jpg
+tti_result.jpg
+runs/
+
+# 파이썬
+__pycache__/
+*.pyc
+
+# 노드
+node_modules/
+
+# 로그 / 임시
+kernel.errors.txt
+*.log
+.DS_Store
