@@ -1,4 +1,4 @@
-#1. 이미지에서 한글 추출
+# 이미지에서 한글 추출
 import pytesseract
 from PIL import Image
 import os
