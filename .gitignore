@@ -21,6 +21,9 @@ __pycache__/
 # 노드
 node_modules/
 
+# Velog 게시 자동화 도구 (로그인 세션 쿠키 포함, 절대 커밋 금지)
+.velog-tool/
+
 # 로그 / 임시
 kernel.errors.txt
 *.log

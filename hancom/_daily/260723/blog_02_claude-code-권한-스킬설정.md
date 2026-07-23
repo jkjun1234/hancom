@@ -11,9 +11,9 @@
 - **권한 모드**: `claude --dangerously-skip-permissions`로 켜는 bypassPermissions는 파일 수정·명령 실행을 전부 자동 승인하는 모드다. 편하지만 위험해서 도커·VM 같은 격리 환경 전용으로 권장된다.
 - **`/statusline`**: 클로드 코드 하단에 컨텍스트 사용률, 세션 비용, git 브랜치, 모델명 같은 걸 항상 보이게 하는 설정. 자연어로 원하는 구성을 말하면 알아서 스크립트를 만들어준다.
 - **스킬 생태계**: 오늘 알게 된 것만 넷 — 질문을 캐물어주는 `grill-me`, 토큰을 아껴주는 `caveman`, 직접 만들어본 `/project-plan`, 그리고 스킬을 사고파는 장터 `skills.ag`.
-- 이 글의 이미지는 대부분 자리표시로 남겨뒀다 — 아래에서 설명하는 이유 참고.
+- 이 글 이미지는 `skills.ag` 실캡처 1장 + 재현본 3장(bypassPermissions·statusline·grill-me)으로 구성했다 — 아래에서 설명하는 이유 참고.
 
-> ⚠️ 이 글 이미지 중 `skills.ag`만 실제로 접속해 캡처한 화면이다. bypassPermissions·statusline은 터미널/세션 상호작용이라 자동 캡처가 애매해서 자리만 표시해뒀다. 직접 실행한 화면으로 채워 넣으면 된다.
+> ⚠️ 이 글 이미지 중 `skills.ag`만 실제로 접속해 캡처한 화면이다. bypassPermissions·statusline·grill-me는 터미널/세션 상호작용이라 실제 화면을 그대로 캡처하기 애매해서, 실제 명령어·실제 상태줄 구성 항목을 그대로 살린 **재현본**(HTML로 터미널 화면을 다시 그려서 캡처)으로 채웠다. 정확한 수치(비용, 컨텍스트 %)나 질문 문구는 예시이고, 실제 세션 그대로의 스크린샷은 아니다.
 
 ---
 
@@ -29,7 +29,9 @@ claude --dangerously-skip-permissions
 - 대신 이름에 이미 경고가 박혀 있다(`dangerously`). 잘못된 명령이 그대로 실행될 수 있기 때문에, **도커나 VM처럼 실제 시스템과 격리된 환경에서 쓰는 게 권장된다.** 지금 이 실습 PC처럼 내 실제 파일 시스템에 바로 접근하는 환경에서 이 모드를 상시로 켜두는 건 추천되지 않는다.
 - 세션 도중에는 `Shift+Tab`으로 권한 모드를 순환 전환할 수 있다. 즉 처음부터 이 옵션으로 켜지 않아도, 작업하다가 필요할 때만 모드를 바꿔 쓸 수 있다는 뜻이다.
 
-🖼️ **이미지 자리** — 터미널에서 `claude --dangerously-skip-permissions`로 세션을 켠 직후 화면, 또는 `Shift+Tab`으로 권한 모드가 순환되는 화면(모드 이름이 하단에 바뀌어 표시되는 부분)
+*(재현본)* `claude --dangerously-skip-permissions`로 세션을 켠 직후 화면. 하단에 `bypass permissions on (shift+tab to cycle)` 상태가 표시된다.
+
+<img src="images/blog_02_bypasspermissions_01.png" width="800">
 
 ### 왜 이게 중요했나
 
@@ -47,7 +49,11 @@ claude --dangerously-skip-permissions
 
 오늘은 미리 참고 자료(설정 예시 파일)를 받아둔 게 있어서, 다음에 그 파일을 클로드에 보여주고 "이대로 적용해줘"라고 요청하면 된다.
 
-🖼️ **이미지 자리** — `/statusline` 적용 전/후 비교(적용 전: 하단에 아무 정보도 없는 기본 입력창 / 적용 후: 컨텍스트 사용률·브랜치명 등이 표시된 상태줄), 2장
+*(재현본)* `/statusline` 적용 전/후 비교. 적용 전엔 입력창 아래에 아무 정보도 없고, 적용 후엔 git 브랜치·모델명·컨텍스트 사용률·세션 비용이 한 줄로 표시된다. (구체적인 수치는 예시다)
+
+<img src="images/blog_02_statusline-before_01.png" width="700">
+
+<img src="images/blog_02_statusline-after_02.png" width="700">
 
 ---
 
@@ -61,7 +67,9 @@ Claude Code는 "스킬"이라는 형태로 특정 작업 습관이나 절차를 
 
 지금 이 CLAUDE.md에 있는 "코딩 전에 생각하기" 원칙 — 가정을 넘겨짚지 말고, 선택지가 여러 개면 물어보라는 것 — 을 스킬로 만들어놓은 셈이라, 왜 필요한지 바로 이해가 됐다.
 
-🖼️ **이미지 자리** — `grill-me` 스킬을 켜고 질문을 받는 터미널 화면
+*(재현본)* `grill-me` 스킬을 켜고 질문을 받는 화면 예시. 실제로는 질문마다 한 개씩, 추천 답변과 함께 물어본다.
+
+<img src="images/blog_02_grillme_01.png" width="800">
 
 ### 3-2. `caveman` — 토큰을 아끼는 스킬
 
